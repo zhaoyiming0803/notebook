@@ -74,9 +74,43 @@ const info = {
 1、对象字面量具有 ThisType<T> 指定的类型，此时 this 的类型为 T：
 
 ``` typescript
+// 使用类型别名定义一个接口，这里用了泛型，两个泛型变量 D 和 M
+type ObjectDescriptor<D, M> = {
+  // 指定 data 为可选字段，类型为 D
+  data?: D;
+  // 指定 methods 为可选字段，类型为 M 和 ThisType<D & M> 组成的交叉类型
+  // ThisType 是一个内置的接口，用来在对象字面量中键入 this，这里指定 this 的类型为 D & M
+  methods?: m & ThisType<D & M>;
+}
 
+// 这里定义一个 mackObject 函数，参数 desc 的类型为 ObjectDescriptor<D, M>
+function makeObject<D, M>(desc: ObjectDescriptor<D, M>): D & M {
+  let data: object = desc.data || {};
+  let methods: object = desc.methods || {};
+  // 这里通过 ... 操作符，将 data 和 methods 里所有的属性、方法都放到了同一个对象里返回，这个对象类型自然就是 D & M，因为它同时包含 D 和 M 两个类型的字段
+  return { ...data, ...methods } as D & M;
+}
+
+let obj = makeObject({
+  // 这里 data 的类型就是我们上面定义的 ObjectDescriptor<D, M> 类型中的 D
+  data: { x: 0, y: 0 },
+  // 这里 methods 的类型就是我们上面定义 ObjectDescriptor<D, M>类型中的 M
+  methods: {
+    moveBy (dx: number, dy: number) {
+      // 所以这里的 this 是我们通过 ThisType<D & M>指定的，this 的类型就是 D & M
+      this.x += dx;
+      this.x += dy;
+    }
+  }
+});
+
+obj.x = 10;
+obj.y = 20;
+obj.moveBy(5, 5);
 ```
+
+2、不包含 ThisType<T> 指定的上下文类型，那么此时 this 具有上下文类型，也就是普通的情况。我们可以试着把上面使用了 ThisType<T> 的例子中，ObjectDescriptor<D, M>类型中指定 methods 的类型中的 & ThisType<D & M> 去掉，你会发现 moveBy 方法中 this.x 和 this.y 报错了，因为此时 this 的类型是 methods 这个对象字面量的类型。
 
 ### 注意
 
-本文最后编辑于2019/07/07，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
+本文最后编辑于2019/07/08，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
