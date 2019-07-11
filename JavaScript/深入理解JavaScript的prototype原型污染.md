@@ -2,7 +2,7 @@
 
 ### 原型对象与原型链
 
-参考：[https://github.com/zymfe/notebook/blob/master/JavaScript/JavaScript%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%A6%82%E5%BF%B5.md](https://github.com/zymfe/notebook/blob/master/JavaScript/JavaScript%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%A6%82%E5%BF%B5.md);
+参考：[JavaScript原型对象与原型链的概念](https://github.com/zymfe/notebook/blob/master/JavaScript/JavaScript%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%A6%82%E5%BF%B5.md);
 
 ### JavaScript 原型链继承
 
