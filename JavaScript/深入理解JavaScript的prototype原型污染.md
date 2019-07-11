@@ -48,7 +48,7 @@ console.log(o2.a); // 2
 
 以上解释了原型污染的原理，那么在实际开发过程中，原型污染大多出现在属性赋值时，常见的比如 对象合并、克隆。
 
-写了个原型污染的 demo，代码参考：[https://github.com/zymfe/test-code/blob/master/test74.js](https://github.com/zymfe/test-code/blob/master/test74.js)
+写了个原型污染的 demo，代码参考：[https://github.com/zymfe/test-code/blob/master/test75.js](https://github.com/zymfe/test-code/blob/master/test75.js)
 
 ### 注意
 
