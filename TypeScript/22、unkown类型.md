@@ -50,6 +50,38 @@ type type8 = never extends unknown ? true : false; // type8 => true
 type type9 = keyof unknown; // type9 => never
 ```
 
+### 只能对 unknown 进行等或不等操作，不能进行其他操作
+
+``` typescript
+value1 === value2;
+value1 !== value2;
+value1 += value2 // error
+```
+
+### unknown 类型的值不能访问其属性、作为函数调用和作为类创建实例
+
+``` typescript
+let value: unknown;
+value.age: // error
+value(); // error
+new Value(); // error
+```
+
+### 使用映射类型时如果遍历的时 unknown 类型，则不会映射任何属性
+
+``` typescript
+type Types<T> = {
+  [P in keyof T]: number
+};
+
+type type10 = Types<any>; // type10 => {[x: string]: number}
+type type11 = Types<unknown>; // type10 => {}
+```
+
+我们在实际使用中，如果有类型无法确定的情况，要尽量避免使用 any，因为 any 会丢失类型信息，一旦一个类型被指定为 any，那么在它上面进行任何操作都是合法的，所以会有意想不到的情况发生。因此如果遇到无法确定类型的情况下，要先考虑使用 unknown。
+
+![https://img.mukewang.com/5d03463300011cf516000466.jpg](https://img.mukewang.com/5d03463300011cf516000466.jpg)
+
 ### 注意
 
 本文最后编辑于2019/07/09，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
