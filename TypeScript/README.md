@@ -1,1 +1,1 @@
-参考：[TypeScript 笔记源码](https://github.com/zymfe/learn-typescript)
+参考：[TypeScript 笔记 demo](https://github.com/zymfe/learn-typescript/tree/master/src/examples)
