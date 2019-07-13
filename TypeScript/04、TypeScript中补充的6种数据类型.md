@@ -195,6 +195,21 @@ console.log(person);
 // console.log(person.address); // Property 'address' does not exist on type '{ name: string; } & { age: number; }'.
 ```
 
+merge 方法也可以这样写：
+
+``` typescript
+function merge<T, U>(a: T, b: U): T & U {
+  const result = <T & U>{};
+  for (let prop in a) { // 使用类型断言，否则报错
+    result[prop] = a[prop] as any;
+  }
+  for (let prop in b) {
+    result[prop] = b[prop] as any;
+  }
+  return result;
+}
+```
+
 ``` typescript
 const custom = <T>(field: T): T => {
   let res = <T>field;
