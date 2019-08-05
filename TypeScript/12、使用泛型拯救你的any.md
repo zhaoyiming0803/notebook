@@ -108,7 +108,9 @@ getArray.tag = 'a'; // Type '"a"' is not assignable to type 'number'.
 getArray('a', 1); // Argument of type '"a"' is not assignable to parameter of type 'number'.
 ```
 
+```
 以上代码中将泛型变量定义在接口最外层，所以不仅函数的类型中可以使用T，在属性 Tag 的定义中也可以使用。但在使用接口的时候，要在接口名后面明确传入一个类型，也就是这里的 getArray<number>，那么后面的 arg 和 tag 的类型都得是 number类型。如果希望 T 可以是任意类型，可以把 GetArray<number> 换成 GetArray<any>。
+```
 
 ### 泛型约束
 
@@ -139,7 +141,7 @@ getLength(123); //
 
 ### 在泛型约束中使用类型参数
 
-当我们定义一个对象，想要对只能访问对象上存在的属性做要求是，该怎么办？先来看这个需求是什么样子？
+当我们定义一个对象，想要对只能访问对象上存在的属性做要求时，该怎么办？先来看这个需求是什么样子？
 
 ``` javascript
 // js
@@ -161,4 +163,4 @@ getProp(obj, 'c'); //  Argument of type '"c"' is not assignable to parameter of 
 
 ### 注意
 
-本文最后编辑于2019/07/02，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
+本文最后编辑于2019/08/05，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
