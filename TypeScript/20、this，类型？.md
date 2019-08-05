@@ -23,7 +23,7 @@ conter.add(5).subtract(2);
 console.log(counter.count); // 13
 ```
 
-我们给 Counter 类定义几个方法，每个方法都返回 this，这个 this 即指向实例，这样我们就可以通过链式调用的形式来使用这些方法。但是如果我们要通过继承的形式丰富这个 Coounter 类，添加一些方法，依然返回 this，然后采用链式调用的形式调用，在过去版本的 TS 中是有问题的，先来看下继承的逻辑：
+我们给 Counter 类定义几个方法，每个方法都返回 this，这个 this 即指向实例，这样我们就可以通过链式调用的形式来使用这些方法。但是如果我们要通过继承的形式丰富这个 Counter 类，添加一些方法，依然返回 this，然后采用链式调用的形式调用，在过去版本的 TS 中是有问题的，先来看下继承的逻辑：
 
 ``` typescript
 class PowCounter extends Counter {
@@ -80,7 +80,7 @@ type ObjectDescriptor<D, M> = {
   data?: D;
   // 指定 methods 为可选字段，类型为 M 和 ThisType<D & M> 组成的交叉类型
   // ThisType 是一个内置的接口，用来在对象字面量中键入 this，这里指定 this 的类型为 D & M
-  methods?: m & ThisType<D & M>;
+  methods?: M & ThisType<D & M>;
 }
 
 // 这里定义一个 mackObject 函数，参数 desc 的类型为 ObjectDescriptor<D, M>
@@ -99,7 +99,7 @@ let obj = makeObject({
     moveBy (dx: number, dy: number) {
       // 所以这里的 this 是我们通过 ThisType<D & M>指定的，this 的类型就是 D & M
       this.x += dx;
-      this.x += dy;
+      this.y += dy;
     }
   }
 });
@@ -113,4 +113,4 @@ obj.moveBy(5, 5);
 
 ### 注意
 
-本文最后编辑于2019/07/08，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
+本文最后编辑于2019/08/05，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
