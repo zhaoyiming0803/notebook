@@ -64,18 +64,18 @@ console.log("node start on port of 8081");
 
 ``` json
 {
-	"apps": [
-		{
-			"name": "my-application",
-			"script": "./index.js",
-			"watch": false,
-			"node_args": "--harmony",
-			"merge_logs": false,
-			"cwd": "./",
-			"instance": 1,
-			"exec_mode": "cluster"
-		}
-	]
+  "apps": [
+    {
+      "name": "my-application",
+      "script": "./index.js",
+      "watch": false,
+      "node_args": "--harmony",
+      "merge_logs": false,
+      "cwd": "./",
+      "instance": 1,
+      "exec_mode": "cluster"
+    }
+  ]
 }
 ```
 运行：pm2 start pm2.json
@@ -89,14 +89,27 @@ http {
     server_name  example.com;
 
     location / {
-        proxy_pass http://127.0.0.1:8081;
-        add_header Access-Control-Allow-Origin *;
-        add_header Access-Control-Allow-Headers Content-Type;
-        add_header Access-Control-Allow-Methods POST;
-        add_header Access-Control-Allow-Methods GET;
+      proxy_pass http://127.0.0.1:8081;
+      add_header Access-Control-Allow-Origin *;
+      add_header Access-Control-Allow-Headers Content-Type;
+      add_header Access-Control-Allow-Methods POST;
+      add_header Access-Control-Allow-Methods GET;
     }
   }
 }
 ```
 
 重启 nginx 之后，打开浏览器输入地址 https://example.com/api/test ， 看是不是输出结果了。
+
+### PM2 主要特性
+
+- 内建负载均衡（使用 Node cluster 集群模块）
+- 后台运行
+- 0 秒停机重载，我理解大概意思是维护升级的时候不需要停机.
+- 具有 Ubuntu 和 CentOS 的启动脚本
+- 停止不稳定的进程（避免无限循环）
+- 控制台检测
+- 提供 HTTP API
+- 远程控制和实时的接口 API ( Nodejs 模块,允许和 PM2 进程管理器交互 )
+
+... 更多可参考 [PM2 官网](http://pm2.keymetrics.io/)
