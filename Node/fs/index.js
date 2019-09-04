@@ -1,6 +1,7 @@
 // 当前脚本的命令是在 src 目录下执行的 node src/fs/index.js
 
 const fs = require('fs');
+const path = require('path');
 
 fs.readFile('./fs/README.md', 'utf-8', (err, data) => {
   if (err) {
@@ -40,3 +41,15 @@ fs.writeFile('./fs/README.txt', 'hello node.js', err => {
   }
 });
 
+function mkdirsSync (dirname) {
+  if (fs.existsSync(dirname)) { 
+    return true;  
+  } else {  
+    if (mkdirsSync(path.dirname(dirname))) {  
+      fs.mkdirSync(dirname);  
+      return true;  
+    }  
+  }  
+}  
+
+// mkdirsSync('abc/def/dd');
