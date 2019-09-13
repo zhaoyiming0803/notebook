@@ -20,11 +20,19 @@ mv /node-v10.16.2-linux-x64 /opt/node/
 
 我们需要创建 node 和 npm  两个软链接到  /usr/local/bin 目录下（要获取root部分权限的话在 ln 前面加 sudo）
 
+注意：创建完软链后最好分别进 /usr/local/bin 下的node 和npm 目录看下 如果文件出现红色闪烁则说明在创建软链前的路径不对导致找不到目录，仔细检查node的路径。
+
+比如，阿里云服务器操作路径如下：
+
 ln -s /opt/node/node-v10.16.2-linux-x64/bin/node /usr/local/bin/node
  
 ln -s /opt/node/node-v10.16.2-linux-x64/bin/npm /usr/local/bin/npm
 
-注意：创建完软链后最好分别进 /usr/local/bin 下的node 和npm 目录看下 如果文件出现红色闪烁则说明在创建软链前的路径不对导致找不到目录，仔细检查node的路径。
+腾讯云服务器操作路径如下：
+
+ln -s /opt/node/bin/node /usr/local/bin/node
+ 
+ln -s /opt/node/bin/npm /usr/local/bin/npm
 
 上述步骤完成后 在任意目录下 node -v ，npm -v 看是否显示版本号，未显示则证明安装不成功，仔细检查步骤有没有错！
 
@@ -34,7 +42,13 @@ npm install -g pm2 （或者npm install pm2@latest -g 安装最新版本的pm2 �
 
 设为全局，创建软链：
 
+阿里云服务器操作路径如下：
+
 ln -s /opt/node/node-v10.16.2-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin
+
+腾讯云服务器操作路径如下：
+
+ln -s /opt/node/bin/pm2 /usr/local/bin
 
 创建完后 用 pm2 list 测试一下吧!
 
