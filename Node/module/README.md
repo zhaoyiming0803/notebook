@@ -10,7 +10,7 @@
 
 3、将/root/src/moduleB视为目录，检查它是否包含index.js文件。 这个文件会被隐式地当作那个文件夹下的”main”模块。
 
-但是，非相对模块名的解析是个完全不同的过程。 Node会在一个特殊的文件夹node_modules里查找你的模块。 node_modules可能与当前文件在同一级目录下，或者在上层目录里。 Node会向上级目录遍历，查找每个node_modules直到它找到要加载的模块。
+但是，非相对模块名的解析是个完全不同的过程。 Node会在一个特殊的文件夹node_modules里查找你的模块。 node_modules可能与当前文件在同一级目录下，或者在上层目录里。 Node会向上级目录遍历，查找每个node_modules直到它找到要加载的模块。写 require 的时候，vscode 会有提示。
 
 还是用上面例子，但假设/root/src/moduleA.js里使用的是非相对路径导入var x = require("moduleB");。 Node则会以下面的顺序去解析moduleB，直到有一个匹配上。
 

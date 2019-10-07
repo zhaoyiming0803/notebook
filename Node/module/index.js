@@ -15,5 +15,10 @@ console.log(d());
 
 // 加载一个模块的顺序，如：require('./a')
 // 在目录正确的情况下，首先试着寻找 a.js
-// 如果 a.js 不存在，则找 a/index.js
-// 如果直接写 require('a')，那么会去 node_modules 目录下找相应的模块
+// 如果 a.js 不存在
+  // 1、查找 a 目录下 package.json 中 main 字段对应的文件
+  // 2、查找 a 目录下的 index.js
+// 如果直接写 require('a')，那么会去 node_modules 目录下找相应的模块，写 require 的时候，vscode 会有提示
+
+var testModule = require('test-module1');
+console.log(testModule());
