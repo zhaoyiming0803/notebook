@@ -1,5 +1,24 @@
 ### Node.js如何解析模块？
 
+Node中，每个文件模块都是一个对象，它的定义如下：
+
+``` javascript
+function Module(id, parent) {
+  this.id = id;
+  this.exports = {};
+  this.parent = parent;
+  this.filename = null;
+  this.loaded = false;
+  this.children = [];
+}
+
+module.exports = Module;
+
+var module = new Module(filename, parent);
+```
+
+所有的模块都是 Module 的实例。可以看到，当前模块（module.js）也是 Module 的一个实例。
+
 在Node.js里导入是通过require函数调用进行的。 Node.js会根据require的是相对路径还是非相对路径做出不同的行为。
 
 相对路径很简单。 例如，假设有一个文件路径为/root/src/moduleA.js，包含了一个导入var x = require("./moduleB"); Node.js以下面的顺序解析这个导入：
