@@ -46,10 +46,11 @@ function mkdirsSync (dirname) {
     return true;  
   } else {  
     if (mkdirsSync(path.dirname(dirname))) {  
+      console.log('dirname: ', dirname);
       fs.mkdirSync(dirname);  
       return true;  
     }  
   }  
 }  
 
-// mkdirsSync('abc/def/dd');
+mkdirsSync('abc/def/dd');
