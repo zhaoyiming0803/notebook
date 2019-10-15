@@ -1,3 +1,5 @@
+[减少DNS解析时间及网络性能优化](https://zhidao.baidu.com/question/1928266222718087627.html)
+
 [前端基础篇之HTTP协议](https://mp.weixin.qq.com/s/naI6cwBvhpljI4jVf93F6g)
 
 [Web通信中传统轮询、长轮询和WebSocket简介](https://zhuanlan.zhihu.com/p/25690011)
