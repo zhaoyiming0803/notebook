@@ -117,5 +117,36 @@ int main(int argc, const char * argv[]) {
         }
     }
     
+    @autoreleasepool {
+        NSDictionary *dic = @{
+            @"name": @"zhaoyiming",
+            @"age": @18,
+            @"sex": @"man"
+        };
+        
+        // NSLog(@"%@", [dic valueForKey: @"name"]);
+        
+        NSArray *keys = [dic allKeys];
+        NSLog(@"%@", keys);
+        NSLog(@"%lu", keys.count);
+        
+        NSArray *values = [dic allValues];
+        NSLog(@"%@", values);
+        NSLog(@"%lu", values.count);
+        
+        NSLog(@"%@", dic[@"name"]);
+    }
+    
+    @autoreleasepool {
+        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObject:@"love" forKey:@"code"];
+        NSLog(@"%@", dic);
+        
+        [dic setValue:@"study" forKey:@"love"];
+        NSLog(@"%@", dic);
+        
+        [dic setObject:@"***" forKey:@"company"];
+        NSLog(@"%@", dic);
+    }
+    
     return 0;
 }
