@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Student : Person
 
-@property(copy, nonatomic) NSInteger num;
+@property(assign, nonatomic) NSInteger num;
 
 @end
 

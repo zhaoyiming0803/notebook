@@ -10,9 +10,26 @@
 #import "Person.h"
 #import "Student.h"
 
+@interface Teacher : Person {}
+
+    @property(copy, nonatomic) NSString* school;
+
+    -(void) showSchool;
+
+@end
+
+@implementation Teacher
+
+    -(void) showSchool {
+        NSLog(@"%@", @"北京大学");
+    }
+
+@end
+
 int main(int argc, const char * argv[]) {
+    // [[class alloc] init] 和 [class new] 都是用来动态分配内存并实例化类
     @autoreleasepool {
-        Person *p = [[Person alloc]init];
+        Person *p = [[Person alloc] init];
         p.name = @"zhangsan";
         p.sex = @"man";
         p.children = @[@"a", @"b"];
@@ -22,8 +39,13 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@", res);
         [Person eat:@"banana"];
         
-        Student *stu = [[Student alloc]init];
+        Student *stu = [[Student alloc] init];
         stu.num = 100;
+        
+        Teacher *teacher = [Teacher new];
+        [teacher showSchool];
+        
+        printf("printf 打印\r\n");
     }
     return 0;
 }
