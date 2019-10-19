@@ -10,4 +10,17 @@
 
 @implementation Person
 
+-(void) say {
+    NSLog(@"%s", "人说话");
+}
+
+-(NSString *) love :(NSString *)a :(NSString *)b {
+    NSLog(@"人喜欢%@和%@", a, b);
+    return @"养成一个好习惯";
+}
+
++(void) eat :(NSString *)food {
+    NSLog(@"人喜欢吃%@", food);
+}
+
 @end

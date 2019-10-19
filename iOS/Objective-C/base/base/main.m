@@ -148,5 +148,45 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@", dic);
     }
     
+    
+    @autoreleasepool {
+        NSInteger var = 20;        // 变量定义
+        NSInteger *ip = &var;      // 指针变量声明，并存储 var 的地址
+
+        NSLog(@"Address of var variable: %ld", (long)&var);
+
+        // 存储在指针变量中的地址
+        NSLog(@"Address stored in ip variable: %ld", (long)ip);
+
+        // 使用指针访问该值
+        NSLog(@"Value of *ip variable: %ld", (long)*ip);
+        
+        NSInteger a = 1;
+        NSInteger b = a;
+        NSLog(@"%ld", (long)a);
+        NSLog(@"%ld", (long)b);
+        b = 2;
+        NSLog(@"%ld", (long)a);
+        NSLog(@"%ld", (long)b);
+        
+        NSString *c = @"hello";
+        NSString *d = c;
+        NSLog(@"%@", c);
+        NSLog(@"%@", d);
+        d = @"world";
+        NSLog(@"%@", c);
+        NSLog(@"%@", d);
+        
+        NSMutableArray *e = [NSMutableArray arrayWithCapacity: 0];
+        [e addObject:@"1"];
+        [e addObject:@"2"];
+        NSMutableArray *f = e;
+        NSLog(@"%@", e);
+        NSLog(@"%@", f);
+        [f addObject:@"3"];
+        NSLog(@"%@", e);
+        NSLog(@"%@", f);
+    }
+        
     return 0;
 }

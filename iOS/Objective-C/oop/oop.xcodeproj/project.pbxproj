@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E12A99E6235A137D00F60CDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A99E5235A137D00F60CDF /* main.m */; };
+		E12A99EE235A154300F60CDF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A99ED235A154300F60CDF /* Person.m */; };
+		E12A99F1235B4C5900F60CDF /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A99F0235B4C5900F60CDF /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		E12A99E2235A137D00F60CDF /* oop */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = oop; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12A99E5235A137D00F60CDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E12A99EC235A154300F60CDF /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		E12A99ED235A154300F60CDF /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		E12A99EF235B4C5900F60CDF /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		E12A99F0235B4C5900F60CDF /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				E12A99E5235A137D00F60CDF /* main.m */,
+				E12A99EC235A154300F60CDF /* Person.h */,
+				E12A99EF235B4C5900F60CDF /* Student.h */,
+				E12A99F0235B4C5900F60CDF /* Student.m */,
+				E12A99ED235A154300F60CDF /* Person.m */,
 			);
 			path = oop;
 			sourceTree = "<group>";
@@ -119,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12A99EE235A154300F60CDF /* Person.m in Sources */,
 				E12A99E6235A137D00F60CDF /* main.m in Sources */,
+				E12A99F1235B4C5900F60CDF /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
