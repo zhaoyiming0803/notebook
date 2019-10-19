@@ -6,6 +6,8 @@
 //  Copyright © 2019 赵一鸣. All rights reserved.
 //
 
+// 使用 control + command + 上下箭头，可以在 .h 和 .m 文件之间切换
+
 #import <Foundation/Foundation.h>
 #import "Person.h"
 #import "Student.h"

@@ -6,7 +6,10 @@
 //  Copyright © 2019 赵一鸣. All rights reserved.
 //
 
-// 导入基础库，包含了诸如 字符串、数组、字典 ... 各种 Objective-C 的基础 API
+// #import 用来导入文件，并自动检查文件是否被重复导入
+// 导入系统文件 #import <xxx> ，直接查找系统目录
+// 导入用户自定义文件 #import "xxx" ，先查找用户用户，再查找系统目录
+// Foundation.h 是主头文件，里面导入了 Foundation 框架的所有基础库，包含了诸如 字符串、数组、字典 ... 各种 Objective-C 的基础 API
 #import <Foundation/Foundation.h>
 
 // %p 表示输出这个指针,
@@ -16,9 +19,10 @@
 
 // 每个文件的入口函数：main
 int main(int argc, const char * argv[]) {
-    // 自动释放池，在当前语句块内的代码，执行完之后，内存就自动释放
+    // 自动释放池，自动清理【动态分配的】【工厂方法创建的】对象（OC都是动态分配对象）
     @autoreleasepool {
         // 打印，相当于 JS 中的 console.log 或 其他语法的 print
+        // OC 没有命名空间的概念，所以 Foundation 中的方法默认以 NS 开头，我们自己写的类，可以自定义前缀
         NSLog(@"Hello Objective-C");
     }
     
@@ -46,8 +50,8 @@ int main(int argc, const char * argv[]) {
     }
     
     @autoreleasepool {
-        NSString *a = @"a";
-        NSLog(@"a变量的长度：%lu", (unsigned long)a.length);
+        NSString* a = @"a";
+        NSLog(@"a变量的长度：%lu", a.length);
     }
     
     @autoreleasepool {
@@ -71,35 +75,36 @@ int main(int argc, const char * argv[]) {
     }
     
     @autoreleasepool {
-        NSString *a = @"hello";
-        NSString *b = [NSString stringWithFormat: @"%@-%u", a, 10];
+        // OC 的字符串是对象类型
+        NSString* a = @"hello";
+        NSString* b = [NSString stringWithFormat: @"%@-%u", a, 10];
         NSLog(@"字符串拼接数字后：%@", b);
     }
     
     @autoreleasepool {
-        NSString *a = @"world";
-        NSString *b = [a uppercaseString];
+        NSString* a = @"world";
+        NSString* b = [a uppercaseString];
         NSLog(@"字符串变成大写：%@", b);
     }
     
     @autoreleasepool {
-        NSString *a = @"Objective-C";
+        NSString* a = @"Objective-C";
         
-        NSString *b = [a substringWithRange: NSMakeRange(0, 9)];
+        NSString* b = [a substringWithRange: NSMakeRange(0, 9)];
         NSLog(@"字符串截取：%@", b);
         
         NSRange r;
         r.location = 0;
         r.length = 9;
-        NSString *c = [a substringWithRange: r];
+        NSString* c = [a substringWithRange: r];
         NSLog(@"字符串截取：%@", c);
     }
     
     @autoreleasepool {
-        NSArray *array = @[@1, @"2", @3.01];
+        NSArray* array = @[@1, @"2", @3.01];
         NSLog(@"%@", array[1]);
         
-        // 在Objective-C 中，id 类型是一个独特的数据类型。在概念上，类似Java 的 Object 类，可以转换为任何数据类型。
+        // 在Objective-C 中，id 类型是一个独特的数据类型。在概念上，类似 Java 的 Object 类，可以转换为任何数据类型。
         // 换句话说，id 类型的变量可以存放任何数据类型的对象。
         // 在内部处理上，这种类型被定义为指向对象的指针，实际上是一个指向这种对象的实例变量的指针。
         for (id item in array) {
@@ -108,7 +113,7 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"%lu", [array indexOfObject: @3.01]);
         
-        NSMutableArray * mutableArray = [NSMutableArray arrayWithArray: array];
+        NSMutableArray* mutableArray = [NSMutableArray arrayWithArray: array];
         [mutableArray addObject: @"13199990909"];
         [mutableArray insertObject: @"haha" atIndex: 1];
         
@@ -118,7 +123,7 @@ int main(int argc, const char * argv[]) {
     }
     
     @autoreleasepool {
-        NSDictionary *dic = @{
+        NSDictionary* dic = @{
             @"name": @"zhaoyiming",
             @"age": @18,
             @"sex": @"man"
@@ -138,7 +143,7 @@ int main(int argc, const char * argv[]) {
     }
     
     @autoreleasepool {
-        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObject:@"love" forKey:@"code"];
+        NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithObject:@"code" forKey:@"love"];
         NSLog(@"%@", dic);
         
         [dic setValue:@"study" forKey:@"love"];
@@ -151,7 +156,10 @@ int main(int argc, const char * argv[]) {
     
     @autoreleasepool {
         NSInteger var = 20;        // 变量定义
-        NSInteger *ip = &var;      // 指针变量声明，并存储 var 的地址
+        NSInteger* ip = &var;      // 指针变量声明，并存储 var 的地址
+        
+        // 编译器会提示加上 & 符，因为声明的 test 是一个指针变量
+        // NSInteger* test = var;
 
         NSLog(@"Address of var variable: %ld", (long)&var);
 
@@ -169,15 +177,15 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%ld", (long)a);
         NSLog(@"%ld", (long)b);
         
-        NSString *c = @"hello";
-        NSString *d = c;
+        NSString* c = @"hello";
+        NSString* d = c;
         NSLog(@"%@", c);
         NSLog(@"%@", d);
         d = @"world";
         NSLog(@"%@", c);
         NSLog(@"%@", d);
         
-        NSMutableArray *e = [NSMutableArray arrayWithCapacity: 0];
+        NSMutableArray* e = [NSMutableArray arrayWithCapacity: 0];
         [e addObject:@"1"];
         [e addObject:@"2"];
         NSMutableArray *f = e;
