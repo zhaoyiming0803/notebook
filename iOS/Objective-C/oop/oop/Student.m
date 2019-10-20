@@ -10,4 +10,20 @@
 
 @implementation Student
 
+- (NSString*) school {
+    return _school;
+}
+
+- (NSInteger) height {
+    return _height;
+}
+
+- (void) setHeight :(NSInteger)height {
+    _height = height;
+}
+
+- (void) setSchool :(NSString*)school {
+    _school = school;
+}
+
 @end

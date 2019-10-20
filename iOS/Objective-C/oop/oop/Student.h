@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "Person.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface Student : Person
+@interface Student : Person {
+    NSInteger _height;
+    NSString* _school;
+}
 
 @property(assign, nonatomic) NSInteger num;
 
-@end
+- (NSInteger) height;
+- (NSString*) school;
+- (void) setHeight :(NSInteger)height;
+- (void) setSchool :(NSString*)school;
 
-NS_ASSUME_NONNULL_END
+@end

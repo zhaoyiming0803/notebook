@@ -13,8 +13,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface Person : NSObject
 
 // 关于 atomic 和 nonatomic 的区别：https://www.jianshu.com/p/7288eacbb1a2
@@ -26,12 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(assign, nonatomic) NSInteger *age;
 @property(strong, nonatomic) NSArray *children;
 
--(void) say;
+- (void) say;
 
--(NSString *)love :(NSString *)a :(NSString *)b;
+- (NSString *)love :(NSString *)a :(NSString *)b;
 
-+(void) eat :(NSString *)food;
++ (void) eat :(NSString *)food;
 
 @end
-
-NS_ASSUME_NONNULL_END
