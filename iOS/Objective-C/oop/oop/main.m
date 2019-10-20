@@ -40,6 +40,11 @@ int main(int argc, const char * argv[]) {
         NSString* res = [p love :@"code" :@"basketball"];
         NSLog(@"%@", res);
         [Person eat:@"banana"];
+        [p mySetName:@"李四" sex:@"男" age:18];
+        NSLog(@"姓名：%@，性别：%@，年龄：%ld", p.name, p.sex, p.age);
+        
+        [p mySetGirlFriend:@"Alice"];
+        NSLog(@"%@", [p myGetGirlFriend]);
         
         Student *stu = [[Student alloc] init];
         stu.num = 100;

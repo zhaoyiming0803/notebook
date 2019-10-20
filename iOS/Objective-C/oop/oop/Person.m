@@ -19,6 +19,12 @@
     return @"养成一个好习惯";
 }
 
+- (void) mySetName:(NSString*)name sex:(NSString*)sex age:(NSInteger)age {
+    _name = name;
+    _sex = sex;
+    _age = age;
+}
+
 + (void) eat :(NSString *)food {
     NSLog(@"人喜欢吃%@", food);
 }
