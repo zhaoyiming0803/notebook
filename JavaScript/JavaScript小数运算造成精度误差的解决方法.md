@@ -37,5 +37,5 @@ function add (a, b) {
   return (a * v + b * v) / v;
 }
 
-console.log(add(0.1, 0.2)); / 0.3
+console.log(add(0.1, 0.2)); // 0.3
 ```
