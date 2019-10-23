@@ -35,3 +35,20 @@ console.log(buf5);
 buf5.writeInt32LE(0x05060708, 4);
 console.log(buf5);
 console.log(buf5.toString('utf8'));
+
+console.log('----------------------------');
+
+const header = Buffer.alloc(6);
+header.writeInt16BE('123', 0);
+header.writeInt32BE('500', 2);
+
+const body = Buffer.from('hello world');
+
+const content = Buffer.concat([header, body]);
+
+const a = content.readInt16BE();
+const b = content.readInt32BE(2);
+const c = content.slice(6);
+console.log(a);
+console.log(b);
+console.log(c.toString());
