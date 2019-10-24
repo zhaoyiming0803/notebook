@@ -26,8 +26,9 @@ app.use(async (ctx, next) => {
   console.log(`Time: ${ms}ms`);
 });
 
-app.listen(3000);
-console.log('app started at port 3000...');
+app.listen(3000, '127.0.0.1', error => {
+  console.log('app started at port 3000...');
+});
 
 /**
  * 如果一个middleware没有调用await next()，会怎么办？
