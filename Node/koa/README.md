@@ -212,7 +212,7 @@ function compose (middleware) {
       // 每个中间件是一个 async 函数，被上一个中间件的 next 方法调用（首个除外）
       if (!fn) return Promise.resolve()
       try {
-        // 执行 next 方法，起始就是再次执行 dispatch，只是传入的 index + 1，表示执行下一个中间件
+        // 执行 next 方法，其实就是再次执行 dispatch，只是传入的 index + 1，表示执行下一个中间件
         return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));
       } catch (err) {
         return Promise.reject(err)
