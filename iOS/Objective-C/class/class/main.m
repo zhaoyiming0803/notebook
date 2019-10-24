@@ -27,7 +27,10 @@ int main(int argc, const char * argv[]) {
         NSLog(@"pig love %@", pig.love);
         [pig printBaseInfo];
         
+        // alloc 分配内存
+        // init  初始化内存并返回初始化完成的内存地址
         Duck* duck = [[Duck alloc] init];
+//        Duck* duck = [Duck new];
         duck.name = @"xiaohua";
         duck.age = 20;
         [duck printBaseInfo];

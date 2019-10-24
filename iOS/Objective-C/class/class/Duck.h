@@ -11,7 +11,7 @@
 
 @interface Duck : Animal
 
-- (void) printBaseInfo;
+- (id) testFunc;
 
 @end
 
