@@ -6,7 +6,7 @@ const article = {
 };
 
 const template = '`<h1>${article.title}</h1><div>${xss(article.content)}</div>`';
-
+console.log(template)
 const htmlContent = vm.runInNewContext(template, {
   article,
 
