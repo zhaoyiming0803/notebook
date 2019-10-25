@@ -5,6 +5,7 @@ const templateMap = {
   index: '`' + fs.readFileSync('./index.tpl').toString() + '`',
   title: '`' + fs.readFileSync('./title.tpl').toString() + '`',
   content: '`' + fs.readFileSync('./content.tpl').toString() + '`',
+  tag: '`' + fs.readFileSync('./tag.tpl').toString() + '`',
 };
 
 const context = {
