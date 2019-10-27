@@ -12,13 +12,18 @@
 #import "Animal.h"
 #import "Pig.h"
 #import "Duck.h"
+#import "Dog.h"
+#import "Apple.h"
+#import "Book.h"
+#import "Lession.h"
+#import "Student.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Animal* dog = [[Animal alloc] init];
-        dog.name = @"xiaoming";
-        dog.age = 18;
-        [dog printBaseInfo];
+        Animal* animal = [[Animal alloc] init];
+        animal.name = @"xiaoming";
+        animal.age = 18;
+        [animal printBaseInfo];
         
         Pig* pig = [[Pig alloc] init];
         pig.name = @"xiaohong";
@@ -36,6 +41,32 @@ int main(int argc, const char * argv[]) {
         [duck printBaseInfo];
         
         NSLog(@"duck base info: %@", duck);
+    }
+    
+    @autoreleasepool {
+        Dog* dog = [[Dog alloc] initWithName:@"xiaohei" Age:10 Sex:@"woman"];
+        NSLog(@"dog: %@", dog);
+    }
+    
+    @autoreleasepool {
+        Apple* apple = [[Apple alloc] initWithName:@"Mac book" Price:13000 Company:@"Apple" Address:@"America"];
+        NSLog(@"apple: %@", apple);
+        
+        // private 私有成员变量不能被继承，所以也就不能在子类内部或通过其实例化的对象访问。
+//        apple->_company = @"苹果公司";
+        
+        // protected 受保护的成员变量可以被继承，但是只能在类内部访问，不能通过实例化的对象访问。
+//        apple->_price = 100;
+        [apple showPrice];
+    }
+    
+    @autoreleasepool {
+        // 面向对象很重要的一条原则：每个对象各自做好各自的事情
+        Book* book = [[Book alloc] initWithName:@"iOS从入门到精通" Pages:300];
+        Lession* lession = [[Lession alloc] initWithName:@"iOS" Hours:100];
+        Student* student = [[Student alloc] initWithBook:book Lession:lession];
+        NSLog(@"book name: %@", student.book.name);
+        NSLog(@"lession hours: %ld", student.lession.hours);
     }
     
     return 0;

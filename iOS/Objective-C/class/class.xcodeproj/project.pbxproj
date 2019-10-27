@@ -11,6 +11,12 @@
 		E12A9A232361D6AB00F60CDF /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A222361D6AB00F60CDF /* Animal.m */; };
 		E12A9A262361D79000F60CDF /* Pig.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A252361D79000F60CDF /* Pig.m */; };
 		E12A9A292361D8A400F60CDF /* Duck.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A282361D8A400F60CDF /* Duck.m */; };
+		E12A9A362365DE6900F60CDF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A352365DE6900F60CDF /* Dog.m */; };
+		E12A9A392365E24C00F60CDF /* Computer.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A382365E24C00F60CDF /* Computer.m */; };
+		E12A9A3C2365E3DE00F60CDF /* Apple.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A3B2365E3DE00F60CDF /* Apple.m */; };
+		E12A9A3F2365EAB500F60CDF /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A3E2365EAB500F60CDF /* Student.m */; };
+		E12A9A422365EC5C00F60CDF /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A412365EC5C00F60CDF /* Book.m */; };
+		E12A9A452365EC9200F60CDF /* Lession.m in Sources */ = {isa = PBXBuildFile; fileRef = E12A9A442365EC9200F60CDF /* Lession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +40,18 @@
 		E12A9A252361D79000F60CDF /* Pig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pig.m; sourceTree = "<group>"; };
 		E12A9A272361D8A400F60CDF /* Duck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Duck.h; sourceTree = "<group>"; };
 		E12A9A282361D8A400F60CDF /* Duck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Duck.m; sourceTree = "<group>"; };
+		E12A9A342365DE6900F60CDF /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		E12A9A352365DE6900F60CDF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		E12A9A372365E24C00F60CDF /* Computer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Computer.h; sourceTree = "<group>"; };
+		E12A9A382365E24C00F60CDF /* Computer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Computer.m; sourceTree = "<group>"; };
+		E12A9A3A2365E3DE00F60CDF /* Apple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Apple.h; sourceTree = "<group>"; };
+		E12A9A3B2365E3DE00F60CDF /* Apple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Apple.m; sourceTree = "<group>"; };
+		E12A9A3D2365EAB500F60CDF /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		E12A9A3E2365EAB500F60CDF /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		E12A9A402365EC5C00F60CDF /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		E12A9A412365EC5C00F60CDF /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		E12A9A432365EC9200F60CDF /* Lession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lession.h; sourceTree = "<group>"; };
+		E12A9A442365EC9200F60CDF /* Lession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lession.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +91,18 @@
 				E12A9A222361D6AB00F60CDF /* Animal.m */,
 				E12A9A272361D8A400F60CDF /* Duck.h */,
 				E12A9A282361D8A400F60CDF /* Duck.m */,
+				E12A9A342365DE6900F60CDF /* Dog.h */,
+				E12A9A352365DE6900F60CDF /* Dog.m */,
+				E12A9A372365E24C00F60CDF /* Computer.h */,
+				E12A9A382365E24C00F60CDF /* Computer.m */,
+				E12A9A3A2365E3DE00F60CDF /* Apple.h */,
+				E12A9A3B2365E3DE00F60CDF /* Apple.m */,
+				E12A9A3D2365EAB500F60CDF /* Student.h */,
+				E12A9A3E2365EAB500F60CDF /* Student.m */,
+				E12A9A402365EC5C00F60CDF /* Book.h */,
+				E12A9A412365EC5C00F60CDF /* Book.m */,
+				E12A9A432365EC9200F60CDF /* Lession.h */,
+				E12A9A442365EC9200F60CDF /* Lession.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -134,10 +164,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12A9A3C2365E3DE00F60CDF /* Apple.m in Sources */,
+				E12A9A422365EC5C00F60CDF /* Book.m in Sources */,
+				E12A9A392365E24C00F60CDF /* Computer.m in Sources */,
 				E12A9A292361D8A400F60CDF /* Duck.m in Sources */,
+				E12A9A3F2365EAB500F60CDF /* Student.m in Sources */,
 				E12A9A262361D79000F60CDF /* Pig.m in Sources */,
+				E12A9A362365DE6900F60CDF /* Dog.m in Sources */,
 				E12A9A182361D46F00F60CDF /* main.m in Sources */,
 				E12A9A232361D6AB00F60CDF /* Animal.m in Sources */,
+				E12A9A452365EC9200F60CDF /* Lession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
