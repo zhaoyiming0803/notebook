@@ -24,7 +24,7 @@
 
 - (instancetype) initWithName: (NSString*) name Price: (NSInteger)price Company: (NSString*) company Address: (NSString*) address;
 
-// 多态：不同对象对同一消息的不同响应方式。父类型的指针指向子类型。
+// 多态：不同对象对同一消息的不同响应方式。父类型的指针指向子类型。多态的前提是继承和子类对父类方法的重写。
 - (void) showPrice;
 
 - (void) showName;
