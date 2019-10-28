@@ -27,8 +27,11 @@
 }
 
 - (void) showPrice {
-    // ...
+    NSLog(@"Computer price");
 }
 
+-(void) showName {
+    NSLog(@"Computer name");
+}
 
 @end

@@ -24,9 +24,10 @@
 
 - (instancetype) initWithName: (NSString*) name Price: (NSInteger)price Company: (NSString*) company Address: (NSString*) address;
 
-// 多态：相同的消息有不同的实现。1、要有继承 2、要有方法重写
+// 多态：不同对象对同一消息的不同响应方式。父类型的指针指向子类型。
 - (void) showPrice;
 
+- (void) showName;
 
 @end
 

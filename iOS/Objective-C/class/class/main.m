@@ -58,6 +58,10 @@ int main(int argc, const char * argv[]) {
         // protected 受保护的成员变量可以被继承，但是只能在类内部访问，不能通过实例化的对象访问。
 //        apple->_price = 100;
         [apple showPrice];
+        
+        Computer* computer = [[Apple alloc] initWithName:@"Mac book pro" Price:14000 Company:@"Apple" Address:@"America"];
+        [computer showPrice];
+        [computer showName];
     }
     
     @autoreleasepool {
