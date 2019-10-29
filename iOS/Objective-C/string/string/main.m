@@ -42,12 +42,6 @@ int main(int argc, const char * argv[]) {
         NSLog(@"range length: %ld", range.length); // 3
         NSLog(@"range location: %ld", range.location); // 2
         
-        NSMutableString* str4 = [[NSMutableString alloc] init];
-        [str4 appendFormat:@"My name is zhaoyiming"];
-        [str4 insertString:@", i love codeing and play ping pang ball!" atIndex:str4.length];
-        [str4 insertString:@"Hello, " atIndex:0];
-        NSLog(@"str4 = %@", str4);
-        
         // 判断一个字符串是否i以另外一个字符开头或结尾
         NSLog(@"str6是否以h开头：%hhd", [str6 hasPrefix:@"h"]); // 1
         NSLog(@"str6是否以h结尾：%hhd", [str6 hasSuffix:@"h"]); // 0
@@ -92,7 +86,15 @@ int main(int argc, const char * argv[]) {
         // 写入字符串到文件
         [str6 writeToFile:@"/Users/zhaoyiming/Desktop/my-project/notebook/iOS/Objective-C/string/string/string.txt" atomically:YES encoding:NSUTF8StringEncoding error:nil];
         
-        // ... 更多字符串使用方法，可以在今后的实战中根据业务场景使用。
+        // 截取字符串
+        NSString* str17 = [str15 substringWithRange:NSMakeRange(1, 3)];
+        NSLog(@"str17: %@", str17);
+        // 以指定位置开始（包括指定位置的字符），并包括之后的全部字符
+        NSString* str18 = [str15 substringFromIndex:4];
+        NSLog(@"str18: %@", str18);
+        // substringToIndex: 从字符串的开头一直截取到指定的位置，但不包括该位置的字符
+        NSString* str19 = [str15 substringToIndex:4];
+        NSLog(@"str19: %@", str19);
     }
     
     @autoreleasepool {
@@ -105,6 +107,29 @@ int main(int argc, const char * argv[]) {
         printf("%c\n", str2[0]);
         str2[2] = 'a';
         printf("%s\n", str2);
+    }
+    
+    @autoreleasepool {
+        NSMutableString* str20 = [[NSMutableString alloc] init];
+        [str20 appendFormat:@"My name is %@", @"zhaoyiming"];
+        [str20 insertString:@", I love codeing and play ping pang ball!" atIndex:str20.length];
+        [str20 insertString:@"Hello, " atIndex:0];
+        NSLog(@"str20 = %@", str20);
+        
+        NSMutableString* str21 = [NSMutableString stringWithCapacity:10];
+        [str21 insertString:@"this is str21" atIndex:0];
+        NSLog(@"str21: %@", str21);
+        NSLog(@"str21.length: %ld", str21.length);
+        
+        // 在已有字符串中按照所给出范围和长度删除字符
+        NSMutableString* str22 = [[NSMutableString alloc] initWithString:@"this is str22"];
+        [str22 deleteCharactersInRange:NSMakeRange(1, 3)];
+        NSLog(@"str22: %@", str22);
+        
+        // 按照所给出的范围，和字符串替换的原有的字符
+        NSMutableString* str23 = [[NSMutableString alloc] initWithString:@"this is str23"];
+        [str23 replaceCharactersInRange:NSMakeRange(1, 3) withString:@"123"];
+        NSLog(@"str23: %@", str23);
     }
     
     return 0;
