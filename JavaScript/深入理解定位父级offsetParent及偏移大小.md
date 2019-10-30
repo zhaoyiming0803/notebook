@@ -52,6 +52,10 @@ offsetParent 并不叫『偏移父级』，而是叫『定位父级』，顾名�
 
 3、每次访问偏移量属性都需要重新计算，会耗费大量的性能，所以可以根据实际情况，将各偏移量保存为变量，避免重复计算。
 
+### 使用 getBoundingClientRect 更方便的判断元素是否在可视区域内
+
+[getBoundingClientRect在项目中的运用](https://github.com/zymfe/notebook/blob/master/JavaScript/getBoundingClientRect%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%BF%90%E7%94%A8.md)
+
 ### 注意
 
 本文最后编辑于2019/10/30，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
