@@ -7,6 +7,7 @@
 //
 
 // *** Objective-C 不能多继承，一个类只能继承一个父类
+// *** 继承和面向接口（iOS架构思想篇）https://www.jianshu.com/p/39e6a8409476
 
 #import <Foundation/Foundation.h>
 #import "Animal.h"
