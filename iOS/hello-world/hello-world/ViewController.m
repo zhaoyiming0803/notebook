@@ -25,6 +25,16 @@
                                    .height/2);
         label;
     })];
+    
+    UIView* view1 = [[UIView alloc] init];
+    view1.backgroundColor = [UIColor redColor];
+    view1.frame = CGRectMake(100, 100, 100, 100);
+    [self.view addSubview:view1];
+    
+    UIView* view2 = [[UIView alloc] init];
+    view2.backgroundColor = [UIColor blueColor];
+    view2.frame = CGRectMake(150, 150, 100, 100);
+    [self.view addSubview:view2];
 }
 
 
