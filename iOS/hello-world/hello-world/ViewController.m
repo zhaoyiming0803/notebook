@@ -56,24 +56,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self.view addSubview:({
-//        UILabel* label = [[UILabel alloc] init];
-//        label.text = @"hello world";
-//        [label sizeToFit];
-//        label.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size
-//                                   .height/2);
-//        label;
-//    })];
+    [self.view addSubview:({
+        UILabel* label = [[UILabel alloc] init];
+        label.text = @"hello world";
+        [label sizeToFit];
+        label.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size
+                                   .height/2);
+        label;
+    })];
     
     TestUIView* view1 = [[TestUIView alloc] init];
     view1.backgroundColor = [UIColor redColor];
     view1.frame = CGRectMake(100, 100, 100, 100);
     [self.view addSubview:view1];
     
-//    UIView* view2 = [[UIView alloc] init];
-//    view2.backgroundColor = [UIColor blueColor];
-//    view2.frame = CGRectMake(150, 150, 100, 100);
-//    [self.view addSubview:view2];
+    UIView* view2 = [[UIView alloc] init];
+    view2.backgroundColor = [UIColor blueColor];
+    view2.frame = CGRectMake(150, 150, 100, 100);
+    [self.view addSubview:view2];
 }
 
 
