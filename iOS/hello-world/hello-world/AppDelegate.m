@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // iOS13之后，appdelegate的指责发生了变化，具体的可以参考https://developer.apple.com/videos/play/wwdc2019/42 这个session。
+    // 简单的说和UI生命周期相关的回调都交给了 SceneDelegate 这个delegate，
+    // 而 appdelegate 主要负责 app 生命周期相关的回调。
+    // 对于window来说，作为一个特殊的UI，也自然的变成了 SceneDelegate 的一个 property，我们可以在 SceneDelegate 的头文件中找到它，
+    // 并在 willConnectToSession 这个函数中使用
     return YES;
 }
 

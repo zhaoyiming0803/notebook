@@ -1,4 +1,5 @@
 #import "SceneDelegate.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -11,6 +12,33 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    NSLog(@"scene: %@", scene);
+    self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
+                   
+    UITabBarController* tabbarController = [[UITabBarController alloc] init];
+    
+    UIViewController* tabbar1 = [[UIViewController alloc] init];
+    tabbar1.view.backgroundColor = [UIColor redColor];
+    tabbar1.tabBarItem.title = @"红色";
+    tabbar1.tabBarItem.image = [UIImage imageNamed:@"tabbar.bundle/tab-0@3x.png"];
+    tabbar1.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar.bundle/tab-0-active@3x.png"];
+    
+    UIViewController* tabbar2 = [[UIViewController alloc] init];
+    tabbar2.view.backgroundColor = [UIColor orangeColor];
+    tabbar2.tabBarItem.title = @"橙色";
+    tabbar2.tabBarItem.image = [UIImage imageNamed:@"tabbar.bundle/tab-1@3x.png"];
+    tabbar2.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar.bundle/tab-1-active@3x.png"];
+    
+    UIViewController* tabbar3 = [[UIViewController alloc] init];
+    tabbar3.view.backgroundColor = [UIColor yellowColor];
+    tabbar3.tabBarItem.title = @"黄色";
+    tabbar3.tabBarItem.image = [UIImage imageNamed:@"tabbar.bundle/tab-2@3x.png"];
+    tabbar3.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar.bundle/tab-2-active@3x.png"];
+    
+    [tabbarController setViewControllers:@[tabbar1, tabbar2, tabbar3]];
+    
+    self.window.rootViewController = tabbarController;
+    [self.window makeKeyAndVisible];
 }
 
 
