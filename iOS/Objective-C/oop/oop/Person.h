@@ -38,6 +38,7 @@
 // 关于 copy 和 strong 的区别：https://www.jianshu.com/p/bb3d0c62f5c9
 // 关于 OC property 指示符：https://blog.csdn.net/lingyun_blog/article/details/41779955
 // c++ 中引用和指针的简单介绍：https://www.zhihu.com/question/37608201
+// OC 属性、属性关键字用法大全 https://www.jianshu.com/p/98db9087a6e7
 @property(copy, nonatomic) NSString* name;
 @property(copy, nonatomic) NSString* sex;
 @property(assign, nonatomic) NSInteger age;
