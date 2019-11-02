@@ -77,7 +77,7 @@
 
 @implementation ViewController
 
-- (instancetype)init {
+- (instancetype) init {
     self = [super init];
     if (self) {
         NSLog(@"ViewController init");
@@ -85,7 +85,7 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"view did load");
@@ -100,7 +100,7 @@
 //    })];
     
     TestUIView* view1 = [[TestUIView alloc] init];
-    view1.backgroundColor = [UIColor redColor];
+    view1.backgroundColor = [UIColor greenColor];
     view1.frame = CGRectMake(100, 100, 100, 100);
     [self.view addSubview:view1];
     
@@ -108,28 +108,39 @@
 //    view2.backgroundColor = [UIColor blueColor];
 //    view2.frame = CGRectMake(150, 150, 100, 100);
 //    [self.view addSubview:view2];
+    
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
+    [view1 addGestureRecognizer:tapGesture];
 }
 
+- (void) pushController {
+    UIViewController* viewController = [[UIViewController alloc] init];
+    viewController.view.backgroundColor = [UIColor purpleColor];
+    viewController.navigationItem.title = @"页面标题";
+    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
+//    viewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated {
     // Called when the view is about to made visible. Default does nothing
     [super viewWillAppear:animated];
     NSLog(@"view will appear");
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void) viewDidAppear:(BOOL)animated {
     // Called when the view has been fully transitioned onto the screen. Default does nothing
     [super viewDidAppear:animated];
     NSLog(@"view did appear");
 }
 
-- (void)viewWillDisappear:(BOOL)animated; {
+- (void) viewWillDisappear:(BOOL)animated; {
     // Called when the view is dismissed, covered or otherwise hidden. Default does nothing
     [super viewWillDisappear:animated];
     NSLog(@"view will disappear");
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
+- (void) viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     NSLog(@"view did disappear");
 }
