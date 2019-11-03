@@ -1,4 +1,5 @@
 #import "SceneDelegate.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -11,6 +12,29 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    ViewController *tab1 = [[ViewController alloc] init];
+    
+    UIViewController *tab2 = [[UIViewController alloc] init];
+    tab2.view.backgroundColor = [UIColor orangeColor];
+    tab2.tabBarItem.title = @"橙色";
+    
+    UIViewController *tab3 = [[UIViewController alloc] init];
+    tab3.view.backgroundColor = [UIColor blueColor];
+    tab3.tabBarItem.title = @"蓝色";
+    
+    UITabBarController * tabbarController = [[UITabBarController alloc] init];
+    [tabbarController setViewControllers:@[tab1, tab2, tab3]];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController];
+    
+    self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
+    [self.window setRootViewController: navigationController];
+    [self.window makeKeyAndVisible];
+}
+
+- (void)pushController {
+    
 }
 
 
