@@ -21,6 +21,14 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        // 关于 @selector https://www.jianshu.com/p/40880fdb749c
+        Animal *animal = [[Animal alloc] init];
+        animal.name = @"haha";
+        animal.age = 18;
+        [animal performSelector:@selector(test2)];
+    }
+    
+    @autoreleasepool {
         Animal* animal = [[Animal alloc] init];
         animal.name = @"xiaoming";
         animal.age = 18;
