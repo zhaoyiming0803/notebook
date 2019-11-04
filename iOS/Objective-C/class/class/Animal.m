@@ -21,7 +21,7 @@
 - (void) test1 {}
 
 - (void) test2 {
-    // respondsToSelector的作用：判断某个方法被实现，防止调用未实现的方法，导致异常
+    // respondsToSelector的作用：判断某个方法是否被实现，防止调用未实现的方法，导致异常
     if ([self respondsToSelector:@selector(test1)]) {
         NSLog(@"Animal 实现了 test1 方法");
     } else {
