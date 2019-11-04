@@ -26,6 +26,8 @@ int main(int argc, const char * argv[]) {
         animal.age = 18;
         [animal printBaseInfo];
         
+        [animal test2];
+        
         Pig* pig = [[Pig alloc] init];
         pig.name = @"xiaohong";
         pig.age = 19;

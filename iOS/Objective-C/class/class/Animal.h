@@ -21,5 +21,9 @@
 // 在具体使用的时候，可以直接使用 NSLog 打印实例化的对象
 - (NSString*) description;
 
+- (void) test1;
+
+- (void) test2;
+
 @end
 
