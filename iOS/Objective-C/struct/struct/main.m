@@ -86,5 +86,21 @@ int main(int argc, const char * argv[]) {
         printf("%d\n", num1);
     }
     
+    @autoreleasepool {
+        int nums[5] = {1, 2, 3, 4, 5};
+        // 数组指针默认指向其第一个元素的内存地址
+        printf("%p\n", nums);
+        printf("%d\n", *nums);
+        
+        printf("---------\n");
+        
+        for (int i = 0; i < 5; i++) {
+            // 可以看到每个 int 类型的数值占 4 个字节
+            printf("数字：%d 内存地址：%p\n", *(nums+i), nums+i);
+        }
+        
+        printf("计算数组元素个数：%ld\n", sizeof(nums) / sizeof(int));
+    }
+    
     return 0;
 }
