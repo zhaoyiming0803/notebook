@@ -10,6 +10,10 @@
 
 #import <Foundation/Foundation.h>
 
+int compare (int a, int b){
+    return a > b ? a : b;
+};
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         struct Person {
@@ -119,6 +123,13 @@ int main(int argc, const char * argv[]) {
         printf("%d\n", *nums);
         
         printf("%d\n", *(nums+1));
+    }
+    
+    @autoreleasepool {
+        // 函数指针
+        // result 是一个函数指针，它指向返回值为 int 类型，并且带有两个 int 类型参数的函数
+        int (*result)(int, int) = compare;
+        printf("比较大小：%d\n", result(1, 2));
     }
     
     return 0;
