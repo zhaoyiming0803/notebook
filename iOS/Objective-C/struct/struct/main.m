@@ -45,5 +45,46 @@ int main(int argc, const char * argv[]) {
         // 因为struct是值类型，所以get方法会返回一个完全独立的struct，而这种修改是完全没有意义的，所以，编译器就禁止了这种调用。
         // 当使用@public修饰struct时，外部是直接访问到的该struct，而不是该struct的一个值拷贝，所以是可以的。
     }
+    
+    @autoreleasepool {
+        typedef struct person {
+            char name[20];
+            int age;
+            char sex[10];
+        } Person;
+        
+        Person p = {"zhaoyiming", 18, "man"};
+        NSLog(@"%s", p.sex);
+    }
+    
+    @autoreleasepool {
+        char str1[3] = "hel";
+        str1[0] = 'a';
+        printf("%s\n", str1);
+        
+        char str2[3] = {'a', 'b', 'c'};
+        printf("%c\n", str2[2]);
+        
+        char *str3 = "hello world";
+        // 指针类型的字符串，不可更改
+//        str3[0] = 'b';
+        printf("%s\n", str3);
+        
+        int arr[5] = {1, 2, 3, 4, 5};
+        printf("%d\n", arr[0]);
+    }
+    
+    @autoreleasepool {
+        int num1 = 100;
+        
+        int num2 = num1;
+        num2 = 200;
+        printf("%d\n", num1);
+        
+        int *num3 = &num1;
+        *num3 = 300;
+        printf("%d\n", num1);
+    }
+    
     return 0;
 }
