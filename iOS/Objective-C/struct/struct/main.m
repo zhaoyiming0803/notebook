@@ -102,5 +102,24 @@ int main(int argc, const char * argv[]) {
         printf("计算数组元素个数：%ld\n", sizeof(nums) / sizeof(int));
     }
     
+    @autoreleasepool {
+        // 指针和数组名字的区别：
+        // 指针是变量，可以随意更改指向（保存的内存地址可以随意更改）
+        // 数组名字是常量，永远表示数组首元素的内存地址，可以在数组名字前加 * 来访问第一个元素
+        // 通过移动指针的方式访问对应索引位置的元素
+        
+        int nums[2] = {1, 2};
+        
+        // 会报错
+        // nums = {3, 4};
+        printf("%d\n", *nums);
+        
+        // 不会报错
+        *nums = 100;
+        printf("%d\n", *nums);
+        
+        printf("%d\n", *(nums+1));
+    }
+    
     return 0;
 }
