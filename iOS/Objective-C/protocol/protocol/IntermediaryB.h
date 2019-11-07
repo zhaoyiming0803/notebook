@@ -13,10 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IntermediaryB : NSObject <Ticket> /* <Ticket> 表示代理 Ticket **/
 
-- (void) sell;
-
-- (void) buy;
-
 @end
 
 NS_ASSUME_NONNULL_END
