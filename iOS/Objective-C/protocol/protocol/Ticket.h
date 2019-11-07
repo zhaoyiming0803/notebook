@@ -24,6 +24,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// 一个协议可以扩展自另一个协议，例如下面的 Ticket 就扩展自 NSObject，如果需要扩展多个协议中间使用逗号分隔
 @protocol Ticket <NSObject>
 
 @required
