@@ -1,7 +1,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 
-@interface SceneDelegate ()
+@interface SceneDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -26,6 +26,8 @@
     UITabBarController * tabbarController = [[UITabBarController alloc] init];
     [tabbarController setViewControllers:@[tab1, tab2, tab3]];
     
+    tabbarController.delegate = self;
+    
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController];
     
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
@@ -33,10 +35,11 @@
     [self.window makeKeyAndVisible];
 }
 
-- (void)pushController {
-    
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    NSLog(@"%@", tabBarController.class);
+    NSLog(@"%@", viewController.class);
+    NSLog(@"did select");
 }
-
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
     // Called as the scene is being released by the system.
