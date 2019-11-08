@@ -27,8 +27,16 @@
     return 20;
 }
 
+// 每个 cell 进入视图，都要执行当前函数
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    NSLog(@"row: %ld", indexPath.row);
+    // UITableViewCell 的复用机制：先去系统回收池获取 cell
+    // 如果能取到，则直接复用
+    // 如果没有可用的 cell，则再次创建
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    }
     cell.textLabel.text = @"主标题";
     cell.textLabel.textColor = [UIColor redColor];
     cell.detailTextLabel.text = @"副标题";
