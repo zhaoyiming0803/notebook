@@ -1,5 +1,6 @@
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "TableViewController.h"
+#import "CollectionViewController.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -13,13 +14,11 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
-    ViewController *tab1 = [[ViewController alloc] init];
+    TableViewController *tab1 = [[TableViewController alloc] init];
     tab1.view.backgroundColor = [UIColor redColor];
     tab1.tabBarItem.title = @"TableView";
     
-    UIViewController *tab2 = [[UIViewController alloc] init];
-    tab2.view.backgroundColor = [UIColor orangeColor];
-    tab2.tabBarItem.title = @"橙色";
+    UIViewController *tab2 = [[CollectionViewController alloc] init];
     
     UIViewController *tab3 = [[UIViewController alloc] init];
     tab3.view.backgroundColor = [UIColor blueColor];

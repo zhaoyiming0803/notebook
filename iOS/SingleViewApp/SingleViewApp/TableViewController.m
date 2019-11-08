@@ -6,13 +6,13 @@
 //  Copyright © 2019 zhaoyiming. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TableViewController.h"
 
-@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface TableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation ViewController
+@implementation TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
