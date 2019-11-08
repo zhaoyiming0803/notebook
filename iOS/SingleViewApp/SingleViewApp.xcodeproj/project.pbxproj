@@ -16,6 +16,7 @@
 		E1814161236DC2E700D7A232 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1814160236DC2E700D7A232 /* main.m */; };
 		E181416B236DC2E700D7A232 /* SingleViewAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E181416A236DC2E700D7A232 /* SingleViewAppTests.m */; };
 		E1814176236DC2E700D7A232 /* SingleViewAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1814175236DC2E700D7A232 /* SingleViewAppUITests.m */; };
+		E18141992375B47200D7A232 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E18141982375B47200D7A232 /* icon.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		E1814171236DC2E700D7A232 /* SingleViewAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingleViewAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1814175236DC2E700D7A232 /* SingleViewAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleViewAppUITests.m; sourceTree = "<group>"; };
 		E1814177236DC2E700D7A232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18141982375B47200D7A232 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		E181414D236DC2E600D7A232 /* SingleViewApp */ = {
 			isa = PBXGroup;
 			children = (
+				E18141982375B47200D7A232 /* icon.bundle */,
 				E181414E236DC2E600D7A232 /* AppDelegate.h */,
 				E181414F236DC2E600D7A232 /* AppDelegate.m */,
 				E1814151236DC2E600D7A232 /* SceneDelegate.h */,
@@ -240,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18141992375B47200D7A232 /* icon.bundle in Resources */,
 				E181415E236DC2E700D7A232 /* LaunchScreen.storyboard in Resources */,
 				E181415B236DC2E700D7A232 /* Assets.xcassets in Resources */,
 				E1814159236DC2E600D7A232 /* Main.storyboard in Resources */,

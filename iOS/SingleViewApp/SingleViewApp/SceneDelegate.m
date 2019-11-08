@@ -14,6 +14,8 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     ViewController *tab1 = [[ViewController alloc] init];
+    tab1.view.backgroundColor = [UIColor redColor];
+    tab1.tabBarItem.title = @"TableView";
     
     UIViewController *tab2 = [[UIViewController alloc] init];
     tab2.view.backgroundColor = [UIColor orangeColor];

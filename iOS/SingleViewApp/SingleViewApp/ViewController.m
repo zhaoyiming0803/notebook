@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource>
 
 @end
 
@@ -18,30 +18,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor redColor];
-    self.tabBarItem.title = @"红色";
-    
-    UIView* box = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    box.backgroundColor = [UIColor blueColor];
-    
-    [self.view addSubview:box];
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
-    [box addGestureRecognizer:tapGesture];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
 }
 
-- (void) pushController {
-    // 当有 UINavigationController 将当前 ViewController 作为 root view controller 初始化时
-    // 就会给 self 添加上 navigationController 属性
-//    NSLog(@"%@", self.navigationController);
-    
-    UIViewController* viewController = [[UIViewController alloc] init];
-    viewController.view.backgroundColor = [UIColor purpleColor];
-    viewController.navigationItem.title = @"页面标题";
-    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
-//    viewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:YES];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    cell.textLabel.text = @"主标题";
+    cell.textLabel.textColor = [UIColor redColor];
+    cell.detailTextLabel.text = @"副标题";
+    cell.detailTextLabel.textColor = [UIColor blueColor];
+    cell.imageView.image = [UIImage imageNamed:@"./icon.bundle/red-packet@3x.png"];
+    return cell;
+}
 
 @end
