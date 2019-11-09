@@ -1,0 +1,15 @@
+### UICollectionViewLayout
+
+用于生成 UICollectionView 布局信息的抽象类
+
+- UICollectionView 提供基本的容器、滚动、复用功能
+
+- 布局信息完全交给开发者
+
+- 作为抽象类，业务逻辑需要继承
+
+- 实现 UICollectionViewLayout(UISubclassingHooks) 中的方法
+
+- 开发者可以自定义生成 attribute、系统通过此进行布局
+
+- 系统提供默认的流式布局 Layout
