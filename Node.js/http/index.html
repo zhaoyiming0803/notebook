@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,101 @@
   <title>file-server</title>
   <link rel="stylesheet" href="/css/reset.css">
 </head>
+
 <body>
-  
+
+  <button id="loginByURLScheme">url scheme 登录</button>
+  <script>
+    // 使用 url scheme 的方式与 App 交互
+    ; (function (window, document) {
+      window.showResponse = function (uname, password) {
+        alert(`uname: ${decodeURIComponent(uname)}, password: ${password}`);
+      }
+
+      var loginBtn = document.querySelector('#loginByURLScheme');
+      loginBtn.onclick = function () {
+        window.location.href = `app://login?uname=${encodeURIComponent('https://github.com/zymfe')}&password=123456`;
+      }
+    })(window, document);  
+  </script>
+
+  <button id="loginByJSBridge">JSBridge 登录</button>
+  <script>
+    ; (function (window, document) {
+
+      function initJsBridge(readyCallback) {
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+        // 注册jsbridge
+        function connectWebViewJavascriptBridge(callback) {
+          if (isAndroid) {
+            if (window.WebViewJavascriptBridge) {
+              callback(WebViewJavascriptBridge)
+            } else {
+              document.addEventListener(
+                'WebViewJavascriptBridgeReady'
+                , function () {
+                  callback(WebViewJavascriptBridge)
+                },
+                false
+              );
+            }
+            return;
+          }
+          if (isiOS) {
+            if (window.WebViewJavascriptBridge) {
+              return callback(WebViewJavascriptBridge);
+            }
+            if (window.WVJBCallbacks) {
+              return window.WVJBCallbacks.push(callback);
+            }
+            window.WVJBCallbacks = [callback];
+            var WVJBIframe = document.createElement('iframe');
+            WVJBIframe.style.display = 'none';
+            WVJBIframe.src = 'https://__bridge_loaded__';
+            document.documentElement.appendChild(WVJBIframe);
+            setTimeout(function () {
+              document.documentElement.removeChild(WVJBIframe)
+            }, 0)
+          }
+        }
+
+        // 调用注册方法
+        connectWebViewJavascriptBridge(function (bridge) {
+          if (isAndroid) {
+            bridge.init(function (message, responseCallback) {
+              console.log('JS got a message', message);
+              responseCallback(data);
+            });
+          }
+
+          // 只有在这里注册过的方法，在原生代码里才能用callHandler的方式调用
+          bridge.registerHandler('jsbridge_getJsMessage', function (data, responseCallback) {
+            responseCallback('native 传过来的是：' + JSON.stringify(data));
+          });
+
+          readyCallback();
+        });
+      }
+
+      // 首先调用JSBridge初始化代码，完成后再设置其他
+      initJsBridge(function () {
+        var loginBtn = document.querySelector('#loginByJSBridge');
+        loginBtn.onclick = function () {
+          // 通过JsBridge调用原生方法，写法固定，第一个参数时方法名，第二个参数时传入参数，第三个参数时响应回调
+          window.WebViewJavascriptBridge.callHandler('login', {
+            uname: encodeURIComponent('https://github.com/zymfe'),
+            password: 123456
+          }, function (response) {
+            alert(JSON.stringify(response));
+          });
+        }
+      });
+
+    })(window, document);
+  </script>
 </body>
+
 </html>
