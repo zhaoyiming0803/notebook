@@ -1,6 +1,7 @@
 #import "SceneDelegate.h"
 #import "TableViewController.h"
 #import "CollectionViewController.h"
+#import "ScrollViewController.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -15,14 +16,10 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     TableViewController *tab1 = [[TableViewController alloc] init];
-    tab1.view.backgroundColor = [UIColor redColor];
-    tab1.tabBarItem.title = @"TableView";
     
-    UIViewController *tab2 = [[CollectionViewController alloc] init];
+    CollectionViewController *tab2 = [[CollectionViewController alloc] init];
     
-    UIViewController *tab3 = [[UIViewController alloc] init];
-    tab3.view.backgroundColor = [UIColor blueColor];
-    tab3.tabBarItem.title = @"蓝色";
+    ScrollViewController *tab3 = [[ScrollViewController alloc] init];
     
     UITabBarController * tabbarController = [[UITabBarController alloc] init];
     [tabbarController setViewControllers:@[tab1, tab2, tab3]];

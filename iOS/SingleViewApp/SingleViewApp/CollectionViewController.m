@@ -17,7 +17,6 @@
 - (instancetype) init {
     self = [super init];
     if (self) {
-        self.view.backgroundColor = [UIColor orangeColor];
         self.tabBarItem.title = @"Collection View";
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];

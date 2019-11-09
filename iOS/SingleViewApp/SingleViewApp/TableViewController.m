@@ -14,9 +14,17 @@
 
 @implementation TableViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.tabBarItem.title = @"TableView";
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = self;
