@@ -81,6 +81,9 @@
 
 - (void) deleteCell {
     NSLog(@"deleteCell");
+    if ([self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
+        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
+    }
 }
 
 @end

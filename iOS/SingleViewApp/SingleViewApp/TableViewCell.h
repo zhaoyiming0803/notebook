@@ -10,7 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TableViewCellDelegate <NSObject>
+
+@optional
+- (void) tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton;
+
+@end
+
 @interface TableViewCell : UITableViewCell
+
+@property(nonatomic, weak, readwrite) id<TableViewCellDelegate> delegate;
 
 - (void) layoutTableCellTitle:(NSString*) titleLabel sourceLabel:(NSString *)sourceLabel timeLabel:(NSString *)timeLabel;
 

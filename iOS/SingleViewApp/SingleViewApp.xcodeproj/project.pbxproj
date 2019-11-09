@@ -24,6 +24,7 @@
 		E18141B32376E52D00D7A232 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141AB2376E52D00D7A232 /* WKWebViewJavascriptBridge.m */; };
 		E18141B42376E52D00D7A232 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141AC2376E52D00D7A232 /* WebViewJavascriptBridge.m */; };
 		E18141B52376E52D00D7A232 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141AF2376E52D00D7A232 /* WebViewJavascriptBridge_JS.m */; };
+		E18141B823770D9D00D7A232 /* DeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141B723770D9D00D7A232 /* DeleteCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		E18141AF2376E52D00D7A232 /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
 		E18141B02376E52D00D7A232 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		E18141B12376E52D00D7A232 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		E18141B623770D9D00D7A232 /* DeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteCellView.h; sourceTree = "<group>"; };
+		E18141B723770D9D00D7A232 /* DeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				E18141A42376A7DD00D7A232 /* NormalViewController.m */,
 				E18141A62376B31B00D7A232 /* TourWebViewController.h */,
 				E18141A72376B31B00D7A232 /* TourWebViewController.m */,
+				E18141B623770D9D00D7A232 /* DeleteCellView.h */,
+				E18141B723770D9D00D7A232 /* DeleteCellView.m */,
 			);
 			path = SingleViewApp;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18141A223768D4C00D7A232 /* TableViewCell.m in Sources */,
+				E18141B823770D9D00D7A232 /* DeleteCellView.m in Sources */,
 				E18141B42376E52D00D7A232 /* WebViewJavascriptBridge.m in Sources */,
 				E18141A52376A7DD00D7A232 /* NormalViewController.m in Sources */,
 				E1814156236DC2E600D7A232 /* TableViewController.m in Sources */,
