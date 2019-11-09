@@ -8,7 +8,7 @@
 
 #import "ScrollViewController.h"
 
-@interface ScrollViewController ()
+@interface ScrollViewController ()<UIScrollViewDelegate>
 
 @end
 
@@ -30,6 +30,7 @@
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 5, self.view.bounds.size.height);
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.delegate = self;
     scrollView.pagingEnabled = YES;
     
     NSArray *colorArray = @[[UIColor redColor],[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor]];
@@ -43,6 +44,18 @@
     }
     
     [self.view addSubview:scrollView];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"scrollViewDidScroll: %f", scrollView.contentOffset.x);
+};
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    NSLog(@"scrollViewWillBeginDragging");
+};
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    NSLog(@"scrollViewDidEndDragging");
 }
 
 @end
