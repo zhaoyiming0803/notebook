@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "TableViewCell.h"
+#import "TourWebViewController.h"
 
 @interface TableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -61,7 +62,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *controller = [[UIViewController alloc] init];
+    TourWebViewController *controller = [[TourWebViewController alloc] init];
     controller.title = [NSString stringWithFormat:@"%ld", indexPath.row];
     NSLog(@"%@", controller.title);
     [self.navigationController pushViewController:controller animated:YES];

@@ -19,6 +19,7 @@
 		E181419F23767A0600D7A232 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E181419E23767A0600D7A232 /* ScrollViewController.m */; };
 		E18141A223768D4C00D7A232 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141A123768D4C00D7A232 /* TableViewCell.m */; };
 		E18141A52376A7DD00D7A232 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141A42376A7DD00D7A232 /* NormalViewController.m */; };
+		E18141A82376B31B00D7A232 /* TourWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141A72376B31B00D7A232 /* TourWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		E18141A123768D4C00D7A232 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		E18141A32376A7DD00D7A232 /* NormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalViewController.h; sourceTree = "<group>"; };
 		E18141A42376A7DD00D7A232 /* NormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalViewController.m; sourceTree = "<group>"; };
+		E18141A62376B31B00D7A232 /* TourWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TourWebViewController.h; sourceTree = "<group>"; };
+		E18141A72376B31B00D7A232 /* TourWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TourWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				E18141A123768D4C00D7A232 /* TableViewCell.m */,
 				E18141A32376A7DD00D7A232 /* NormalViewController.h */,
 				E18141A42376A7DD00D7A232 /* NormalViewController.m */,
+				E18141A62376B31B00D7A232 /* TourWebViewController.h */,
+				E18141A72376B31B00D7A232 /* TourWebViewController.m */,
 			);
 			path = SingleViewApp;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				E1814150236DC2E600D7A232 /* AppDelegate.m in Sources */,
 				E181419C2375C44A00D7A232 /* CollectionViewController.m in Sources */,
 				E181419F23767A0600D7A232 /* ScrollViewController.m in Sources */,
+				E18141A82376B31B00D7A232 /* TourWebViewController.m in Sources */,
 				E1814161236DC2E700D7A232 /* main.m in Sources */,
 				E1814153236DC2E600D7A232 /* SceneDelegate.m in Sources */,
 			);
