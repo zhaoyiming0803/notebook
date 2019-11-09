@@ -8,6 +8,16 @@
 
 #import "TableViewCell.h"
 
+@interface TableViewCell()
+
+@property(nonatomic, strong, readwrite) UILabel *titleLabel;
+@property(nonatomic, strong, readwrite) UILabel *sourceLabel;
+@property(nonatomic, strong, readwrite) UILabel *timeLabel;
+@property(nonatomic, strong, readwrite) UIImageView *rightImageView;
+@property(nonatomic, strong, readwrite) UIButton *deleteButton;
+
+@end
+
 @implementation TableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -39,6 +49,15 @@
             self.rightImageView.backgroundColor = [UIColor redColor];
             self.rightImageView;
         })];
+        
+        [self.contentView addSubview:({
+            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(240, 70, 40, 20)];
+            [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
+            [self.deleteButton setTitle:@"Y" forState:UIControlStateHighlighted];
+            self.deleteButton.backgroundColor = [UIColor redColor];
+            [self.deleteButton addTarget:self action:@selector(deleteCell) forControlEvents:UIControlEventTouchUpInside];
+            self.deleteButton;
+        })];
     }
     return self;
 }
@@ -58,6 +77,10 @@
                                       self.timeLabel.frame.size.height
                                     );
     self.rightImageView.image = [UIImage imageNamed:@"icon.bundle/jnt.png"];
+}
+
+- (void) deleteCell {
+    NSLog(@"deleteCell");
 }
 
 @end

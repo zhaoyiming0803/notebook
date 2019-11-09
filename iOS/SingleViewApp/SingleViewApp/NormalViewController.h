@@ -1,5 +1,5 @@
 //
-//  TableViewCell.h
+//  NormalViewController.h
 //  SingleViewApp
 //
 //  Created by 赵一鸣 on 2019/11/9.
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TableViewCell : UITableViewCell
-
-- (void) layoutTableCellTitle:(NSString*) titleLabel sourceLabel:(NSString *)sourceLabel timeLabel:(NSString *)timeLabel;
+@interface NormalViewController : UIViewController
 
 @end
 

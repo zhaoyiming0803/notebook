@@ -2,6 +2,7 @@
 #import "TableViewController.h"
 #import "CollectionViewController.h"
 #import "ScrollViewController.h"
+#import "NormalViewController.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -21,8 +22,10 @@
     
     ScrollViewController *tab3 = [[ScrollViewController alloc] init];
     
+    NormalViewController *tab4 = [[NormalViewController alloc] init];
+    
     UITabBarController * tabbarController = [[UITabBarController alloc] init];
-    [tabbarController setViewControllers:@[tab1, tab2, tab3]];
+    [tabbarController setViewControllers:@[tab1, tab2, tab3, tab4]];
     
     tabbarController.delegate = self;
     
