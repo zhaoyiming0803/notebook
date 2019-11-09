@@ -48,7 +48,8 @@
     
     [self.webview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     
-    [self setupJsBridge];
+    // JSBridge 与 URL Scheme 方式只能同时选用其中一种，目前仅测试使用
+//    [self setupJsBridge];
     
     UIView *naviveView = [[UIView alloc] initWithFrame:CGRectMake(0, 400, self.view.frame.size.width, self.view.frame.size.height - 400)];
     naviveView.backgroundColor = [UIColor blueColor];
