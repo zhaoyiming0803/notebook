@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "TableViewCell.h"
 
 @interface TableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -14,8 +15,7 @@
 
 @implementation TableViewController
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.tabBarItem.title = @"TableView";
@@ -41,15 +41,18 @@
     // UITableViewCell 的复用机制：先去系统回收池获取 cell
     // 如果能取到，则直接复用
     // 如果没有可用的 cell，则再次创建
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"主标题 - section - %ld", indexPath.section];
-    cell.textLabel.textColor = [UIColor redColor];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"副标题 - row - %ld", indexPath.row];
-    cell.detailTextLabel.textColor = [UIColor blueColor];
-    cell.imageView.image = [UIImage imageNamed:@"./icon.bundle/red-packet@3x.png"];
+    
+    [cell layoutTableCellTitle:[NSString stringWithFormat:@"主标题 - section - %ld", indexPath.section] sourceLabel:[NSString stringWithFormat:@"副标题 - row - %ld", indexPath.row] timeLabel:@"3分钟前"];
+    
+//    cell.textLabel.text = [NSString stringWithFormat:@"主标题 - section - %ld", indexPath.section];
+//    cell.textLabel.textColor = [UIColor redColor];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"副标题 - row - %ld", indexPath.row];
+//    cell.detailTextLabel.textColor = [UIColor blueColor];
+//    cell.imageView.image = [UIImage imageNamed:@"./icon.bundle/red-packet@3x.png"];
     return cell;
 }
 

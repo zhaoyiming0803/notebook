@@ -17,6 +17,7 @@
 		E18141992375B47200D7A232 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E18141982375B47200D7A232 /* icon.bundle */; };
 		E181419C2375C44A00D7A232 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E181419B2375C44A00D7A232 /* CollectionViewController.m */; };
 		E181419F23767A0600D7A232 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E181419E23767A0600D7A232 /* ScrollViewController.m */; };
+		E18141A223768D4C00D7A232 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141A123768D4C00D7A232 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		E181419B2375C44A00D7A232 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		E181419D23767A0600D7A232 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		E181419E23767A0600D7A232 /* ScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		E18141A023768D4C00D7A232 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		E18141A123768D4C00D7A232 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				E181419B2375C44A00D7A232 /* CollectionViewController.m */,
 				E181419D23767A0600D7A232 /* ScrollViewController.h */,
 				E181419E23767A0600D7A232 /* ScrollViewController.m */,
+				E18141A023768D4C00D7A232 /* TableViewCell.h */,
+				E18141A123768D4C00D7A232 /* TableViewCell.m */,
 			);
 			path = SingleViewApp;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18141A223768D4C00D7A232 /* TableViewCell.m in Sources */,
 				E1814156236DC2E600D7A232 /* TableViewController.m in Sources */,
 				E1814150236DC2E600D7A232 /* AppDelegate.m in Sources */,
 				E181419C2375C44A00D7A232 /* CollectionViewController.m in Sources */,
