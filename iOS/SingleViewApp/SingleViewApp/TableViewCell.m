@@ -33,6 +33,12 @@
             self.timeLabel.textColor = [UIColor grayColor];
             self.timeLabel;
         })];
+        
+        [self.contentView addSubview:({
+            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(300, 20, 70, 70)];
+            self.rightImageView.backgroundColor = [UIColor redColor];
+            self.rightImageView;
+        })];
     }
     return self;
 }
@@ -51,6 +57,7 @@
                                       self.timeLabel.frame.size.width,
                                       self.timeLabel.frame.size.height
                                     );
+    self.rightImageView.image = [UIImage imageNamed:@"icon.bundle/jnt.png"];
 }
 
 @end

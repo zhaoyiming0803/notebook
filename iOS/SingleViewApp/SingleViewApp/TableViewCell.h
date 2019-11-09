@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong, readwrite) UILabel *titleLabel;
 @property(nonatomic, strong, readwrite) UILabel *sourceLabel;
 @property(nonatomic, strong, readwrite) UILabel *timeLabel;
+@property(nonatomic, strong, readwrite) UIImageView *rightImageView;
 
 - (void) layoutTableCellTitle:(NSString*) titleLabel sourceLabel:(NSString *)sourceLabel timeLabel:(NSString *)timeLabel;
 
