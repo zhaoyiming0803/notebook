@@ -8,6 +8,7 @@
 
 // 浅谈 iOS 之 Block http://www.cocoachina.com/articles/25762
 // ***** Objective-C中的Block http://www.cocoachina.com/articles/10891
+// ***** 深入研究Block用weakSelf、strongSelf、@weakify、@strongify解决循环引用 https://blog.csdn.net/qq_30513483/article/details/52587551
 
 #import <Foundation/Foundation.h>
 #import "Person.h"
