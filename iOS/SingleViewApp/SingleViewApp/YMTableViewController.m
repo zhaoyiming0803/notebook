@@ -10,6 +10,7 @@
 #import "YMTableViewCell.h"
 #import "YMTourWebViewController.h"
 #import "YMDeleteCellView.h"
+#import "YMRegionApi.h"
 
 @interface YMTableViewController ()<UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate>
 
@@ -40,6 +41,9 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
+    
+    YMRegionApi *regionApi = [[YMRegionApi alloc] init];
+    [regionApi getRegionList];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

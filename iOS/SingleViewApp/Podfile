@@ -1,0 +1,4 @@
+target 'SingleViewApp' do
+	pod 'AFNetworking'
+	pod 'WebViewJavascriptBridge'
+end

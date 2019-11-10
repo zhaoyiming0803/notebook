@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92ED834D5D8B032CA639FD22 /* libPods-SingleViewApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F745DC6C0B8276B2BFB9B940 /* libPods-SingleViewApp.a */; };
 		E1814150236DC2E600D7A232 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E181414F236DC2E600D7A232 /* AppDelegate.m */; };
 		E1814153236DC2E600D7A232 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1814152236DC2E600D7A232 /* SceneDelegate.m */; };
 		E1814156236DC2E600D7A232 /* YMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1814155236DC2E600D7A232 /* YMTableViewController.m */; };
@@ -20,11 +21,8 @@
 		E18141A223768D4C00D7A232 /* YMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141A123768D4C00D7A232 /* YMTableViewCell.m */; };
 		E18141A52376A7DD00D7A232 /* YMNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141A42376A7DD00D7A232 /* YMNormalViewController.m */; };
 		E18141A82376B31B00D7A232 /* YMTourWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141A72376B31B00D7A232 /* YMTourWebViewController.m */; };
-		E18141B22376E52D00D7A232 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141AA2376E52D00D7A232 /* WebViewJavascriptBridgeBase.m */; };
-		E18141B32376E52D00D7A232 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141AB2376E52D00D7A232 /* WKWebViewJavascriptBridge.m */; };
-		E18141B42376E52D00D7A232 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141AC2376E52D00D7A232 /* WebViewJavascriptBridge.m */; };
-		E18141B52376E52D00D7A232 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141AF2376E52D00D7A232 /* WebViewJavascriptBridge_JS.m */; };
 		E18141B823770D9D00D7A232 /* YMDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141B723770D9D00D7A232 /* YMDeleteCellView.m */; };
+		E18141BC237853DE00D7A232 /* YMRegionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141BB237853DE00D7A232 /* YMRegionApi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		774C58825EFE50E888D558B4 /* Pods-SingleViewApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleViewApp.release.xcconfig"; path = "Target Support Files/Pods-SingleViewApp/Pods-SingleViewApp.release.xcconfig"; sourceTree = "<group>"; };
+		81354EFE1DDF56E1C255A52F /* Pods-SingleViewApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleViewApp.debug.xcconfig"; path = "Target Support Files/Pods-SingleViewApp/Pods-SingleViewApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E181414B236DC2E600D7A232 /* SingleViewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleViewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E181414E236DC2E600D7A232 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E181414F236DC2E600D7A232 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,16 +72,11 @@
 		E18141A42376A7DD00D7A232 /* YMNormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMNormalViewController.m; sourceTree = "<group>"; };
 		E18141A62376B31B00D7A232 /* YMTourWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMTourWebViewController.h; sourceTree = "<group>"; };
 		E18141A72376B31B00D7A232 /* YMTourWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMTourWebViewController.m; sourceTree = "<group>"; };
-		E18141AA2376E52D00D7A232 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
-		E18141AB2376E52D00D7A232 /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
-		E18141AC2376E52D00D7A232 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
-		E18141AD2376E52D00D7A232 /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
-		E18141AE2376E52D00D7A232 /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
-		E18141AF2376E52D00D7A232 /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
-		E18141B02376E52D00D7A232 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
-		E18141B12376E52D00D7A232 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		E18141B623770D9D00D7A232 /* YMDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMDeleteCellView.h; sourceTree = "<group>"; };
 		E18141B723770D9D00D7A232 /* YMDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDeleteCellView.m; sourceTree = "<group>"; };
+		E18141BA237853DE00D7A232 /* YMRegionApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMRegionApi.h; sourceTree = "<group>"; };
+		E18141BB237853DE00D7A232 /* YMRegionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMRegionApi.m; sourceTree = "<group>"; };
+		F745DC6C0B8276B2BFB9B940 /* libPods-SingleViewApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SingleViewApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92ED834D5D8B032CA639FD22 /* libPods-SingleViewApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		385078D9C9C4BDDC4E2A4154 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F745DC6C0B8276B2BFB9B940 /* libPods-SingleViewApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94DFFDC685E8F19081D0B5F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81354EFE1DDF56E1C255A52F /* Pods-SingleViewApp.debug.xcconfig */,
+				774C58825EFE50E888D558B4 /* Pods-SingleViewApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E1814142236DC2E600D7A232 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +129,8 @@
 				E1814169236DC2E700D7A232 /* SingleViewAppTests */,
 				E1814174236DC2E700D7A232 /* SingleViewAppUITests */,
 				E181414C236DC2E600D7A232 /* Products */,
+				94DFFDC685E8F19081D0B5F0 /* Pods */,
+				385078D9C9C4BDDC4E2A4154 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +147,7 @@
 		E181414D236DC2E600D7A232 /* SingleViewApp */ = {
 			isa = PBXGroup;
 			children = (
+				E18141B92378531900D7A232 /* api */,
 				E18141982375B47200D7A232 /* icon.bundle */,
 				E181414E236DC2E600D7A232 /* AppDelegate.h */,
 				E181414F236DC2E600D7A232 /* AppDelegate.m */,
@@ -148,7 +164,6 @@
 				E181419E23767A0600D7A232 /* YMScrollViewController.m */,
 				E18141A023768D4C00D7A232 /* YMTableViewCell.h */,
 				E18141A123768D4C00D7A232 /* YMTableViewCell.m */,
-				E18141A92376E52D00D7A232 /* WebViewJavascriptBridge */,
 				E18141A32376A7DD00D7A232 /* YMNormalViewController.h */,
 				E18141A42376A7DD00D7A232 /* YMNormalViewController.m */,
 				E18141A62376B31B00D7A232 /* YMTourWebViewController.h */,
@@ -177,20 +192,13 @@
 			path = SingleViewAppUITests;
 			sourceTree = "<group>";
 		};
-		E18141A92376E52D00D7A232 /* WebViewJavascriptBridge */ = {
+		E18141B92378531900D7A232 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				E18141AA2376E52D00D7A232 /* WebViewJavascriptBridgeBase.m */,
-				E18141AB2376E52D00D7A232 /* WKWebViewJavascriptBridge.m */,
-				E18141AC2376E52D00D7A232 /* WebViewJavascriptBridge.m */,
-				E18141AD2376E52D00D7A232 /* WebViewJavascriptBridge_JS.h */,
-				E18141AE2376E52D00D7A232 /* WebViewJavascriptBridgeBase.h */,
-				E18141AF2376E52D00D7A232 /* WebViewJavascriptBridge_JS.m */,
-				E18141B02376E52D00D7A232 /* WebViewJavascriptBridge.h */,
-				E18141B12376E52D00D7A232 /* WKWebViewJavascriptBridge.h */,
+				E18141BA237853DE00D7A232 /* YMRegionApi.h */,
+				E18141BB237853DE00D7A232 /* YMRegionApi.m */,
 			);
-			name = WebViewJavascriptBridge;
-			path = WebViewJavascriptBridge/WebViewJavascriptBridge;
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E181417A236DC2E700D7A232 /* Build configuration list for PBXNativeTarget "SingleViewApp" */;
 			buildPhases = (
+				CA3C4A06526DC683A20FB39F /* [CP] Check Pods Manifest.lock */,
 				E1814147236DC2E600D7A232 /* Sources */,
 				E1814148236DC2E600D7A232 /* Frameworks */,
 				E1814149236DC2E600D7A232 /* Resources */,
@@ -317,20 +326,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CA3C4A06526DC683A20FB39F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SingleViewApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1814147236DC2E600D7A232 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E18141A223768D4C00D7A232 /* YMTableViewCell.m in Sources */,
+				E18141BC237853DE00D7A232 /* YMRegionApi.m in Sources */,
 				E18141B823770D9D00D7A232 /* YMDeleteCellView.m in Sources */,
-				E18141B42376E52D00D7A232 /* WebViewJavascriptBridge.m in Sources */,
 				E18141A52376A7DD00D7A232 /* YMNormalViewController.m in Sources */,
 				E1814156236DC2E600D7A232 /* YMTableViewController.m in Sources */,
-				E18141B52376E52D00D7A232 /* WebViewJavascriptBridge_JS.m in Sources */,
 				E1814150236DC2E600D7A232 /* AppDelegate.m in Sources */,
-				E18141B32376E52D00D7A232 /* WKWebViewJavascriptBridge.m in Sources */,
-				E18141B22376E52D00D7A232 /* WebViewJavascriptBridgeBase.m in Sources */,
 				E181419C2375C44A00D7A232 /* YMCollectionViewController.m in Sources */,
 				E181419F23767A0600D7A232 /* YMScrollViewController.m in Sources */,
 				E18141A82376B31B00D7A232 /* YMTourWebViewController.m in Sources */,
@@ -483,6 +514,7 @@
 		};
 		E181417B236DC2E700D7A232 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81354EFE1DDF56E1C255A52F /* Pods-SingleViewApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,6 +532,7 @@
 		};
 		E181417C236DC2E700D7A232 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 774C58825EFE50E888D558B4 /* Pods-SingleViewApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
