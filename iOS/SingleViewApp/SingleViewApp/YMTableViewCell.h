@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface TableViewCell : UITableViewCell
+@interface YMTableViewCell : UITableViewCell
 
 @property(nonatomic, weak, readwrite) id<TableViewCellDelegate> delegate;
 

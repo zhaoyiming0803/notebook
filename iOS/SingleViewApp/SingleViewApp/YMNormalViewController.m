@@ -6,13 +6,13 @@
 //  Copyright © 2019 zhaoyiming. All rights reserved.
 //
 
-#import "NormalViewController.h"
+#import "YMNormalViewController.h"
 
-@interface NormalViewController ()
+@interface YMNormalViewController ()
 
 @end
 
-@implementation NormalViewController
+@implementation YMNormalViewController
 
 - (instancetype)init
 {

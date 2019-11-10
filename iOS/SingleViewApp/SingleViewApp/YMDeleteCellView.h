@@ -1,5 +1,5 @@
 //
-//  NormalViewController.h
+//  DeleteCellView.h
 //  SingleViewApp
 //
 //  Created by 赵一鸣 on 2019/11/9.
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NormalViewController : UIViewController
+@interface YMDeleteCellView : UIView
+
+- (void) showDeleteViewFromPoint:(CGPoint)point clickBlock:(dispatch_block_t)clickBlock;
 
 @end
 

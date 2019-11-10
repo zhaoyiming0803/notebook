@@ -1,5 +1,5 @@
 //
-//  TourWebViewController.h
+//  NormalViewController.h
 //  SingleViewApp
 //
 //  Created by 赵一鸣 on 2019/11/9.
@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TourWebViewController : UIViewController
+@interface YMNormalViewController : UIViewController
 
 @end
 

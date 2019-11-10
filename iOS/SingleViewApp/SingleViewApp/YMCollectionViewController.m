@@ -6,13 +6,13 @@
 //  Copyright © 2019 zhaoyiming. All rights reserved.
 //
 
-#import "CollectionViewController.h"
+#import "YMCollectionViewController.h"
 
-@interface CollectionViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface YMCollectionViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
 
-@implementation CollectionViewController
+@implementation YMCollectionViewController
 
 - (instancetype) init {
     self = [super init];

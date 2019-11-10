@@ -6,19 +6,19 @@
 //  Copyright © 2019 zhaoyiming. All rights reserved.
 //
 
-#import "TableViewController.h"
-#import "TableViewCell.h"
-#import "TourWebViewController.h"
-#import "DeleteCellView.h"
+#import "YMTableViewController.h"
+#import "YMTableViewCell.h"
+#import "YMTourWebViewController.h"
+#import "YMDeleteCellView.h"
 
-@interface TableViewController ()<UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate>
+@interface YMTableViewController ()<UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate>
 
 @property(nonatomic, strong, readwrite) UITableView *tableView;
 @property(nonatomic, strong, readwrite) NSMutableArray *dataArray;
 
 @end
 
-@implementation TableViewController
+@implementation YMTableViewController
 
 - (instancetype)init {
     self = [super init];
@@ -51,9 +51,9 @@
     // UITableViewCell 的复用机制：先去系统回收池获取 cell
     // 如果能取到，则直接复用
     // 如果没有可用的 cell，则再次创建
-    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    YMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
-        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell = [[YMTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
         cell.delegate = self;
     }
     
@@ -72,7 +72,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    TourWebViewController *controller = [[TourWebViewController alloc] init];
+    YMTourWebViewController *controller = [[YMTourWebViewController alloc] init];
     controller.title = [NSString stringWithFormat:@"%ld", indexPath.row];
     NSLog(@"%@", controller.title);
     [self.navigationController pushViewController:controller animated:YES];
@@ -80,7 +80,7 @@
 
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
     tableViewCell.alpha = 0.5;
-    DeleteCellView *deleteCellView = [[DeleteCellView alloc] initWithFrame:self.view.bounds];
+    YMDeleteCellView *deleteCellView = [[YMDeleteCellView alloc] initWithFrame:self.view.bounds];
     CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
     
     __weak typeof(self) wxself = self;

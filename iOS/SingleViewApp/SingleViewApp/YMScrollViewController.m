@@ -6,13 +6,13 @@
 //  Copyright © 2019 zhaoyiming. All rights reserved.
 //
 
-#import "ScrollViewController.h"
+#import "YMScrollViewController.h"
 
-@interface ScrollViewController ()<UIScrollViewDelegate>
+@interface YMScrollViewController ()<UIScrollViewDelegate>
 
 @end
 
-@implementation ScrollViewController
+@implementation YMScrollViewController
 
 - (instancetype) init {
     self = [super init];

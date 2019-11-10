@@ -6,9 +6,9 @@
 //  Copyright © 2019 zhaoyiming. All rights reserved.
 //
 
-#import "TableViewCell.h"
+#import "YMTableViewCell.h"
 
-@interface TableViewCell()
+@interface YMTableViewCell()
 
 @property(nonatomic, strong, readwrite) UILabel *titleLabel;
 @property(nonatomic, strong, readwrite) UILabel *sourceLabel;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation TableViewCell
+@implementation YMTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

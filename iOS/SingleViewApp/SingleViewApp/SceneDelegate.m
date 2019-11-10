@@ -1,8 +1,8 @@
 #import "SceneDelegate.h"
-#import "TableViewController.h"
-#import "CollectionViewController.h"
-#import "ScrollViewController.h"
-#import "NormalViewController.h"
+#import "YMTableViewController.h"
+#import "YMCollectionViewController.h"
+#import "YMScrollViewController.h"
+#import "YMNormalViewController.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -16,13 +16,13 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
-    TableViewController *tab1 = [[TableViewController alloc] init];
+    YMTableViewController *tab1 = [[YMTableViewController alloc] init];
     
-    CollectionViewController *tab2 = [[CollectionViewController alloc] init];
+    YMCollectionViewController *tab2 = [[YMCollectionViewController alloc] init];
     
-    ScrollViewController *tab3 = [[ScrollViewController alloc] init];
+    YMScrollViewController *tab3 = [[YMScrollViewController alloc] init];
     
-    NormalViewController *tab4 = [[NormalViewController alloc] init];
+    YMNormalViewController *tab4 = [[YMNormalViewController alloc] init];
     
     UITabBarController * tabbarController = [[UITabBarController alloc] init];
     [tabbarController setViewControllers:@[tab1, tab2, tab3, tab4]];

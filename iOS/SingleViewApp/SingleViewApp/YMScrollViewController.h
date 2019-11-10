@@ -1,5 +1,5 @@
 //
-//  DeleteCellView.h
+//  ScrollViewController.h
 //  SingleViewApp
 //
 //  Created by 赵一鸣 on 2019/11/9.
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DeleteCellView : UIView
-
-- (void) showDeleteViewFromPoint:(CGPoint)point clickBlock:(dispatch_block_t)clickBlock;
+@interface YMScrollViewController : UIViewController
 
 @end
 

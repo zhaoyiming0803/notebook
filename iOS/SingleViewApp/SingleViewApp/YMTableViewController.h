@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewController : UIViewController
+@interface YMTableViewController : UIViewController
 
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright © 2019 zhaoyiming. All rights reserved.
 //
 
-#import "DeleteCellView.h"
+#import "YMDeleteCellView.h"
 
-@interface DeleteCellView()
+@interface YMDeleteCellView()
 
 @property(nonatomic, strong, readwrite) UIView *backgroundView;
 @property(nonatomic, strong, readwrite) UIButton *deleteButton;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation DeleteCellView
+@implementation YMDeleteCellView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

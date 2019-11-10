@@ -6,10 +6,10 @@
 //  Copyright © 2019 zhaoyiming. All rights reserved.
 //
 
-#import "TourWebViewController.h"
+#import "YMTourWebViewController.h"
 #import "WebViewJavascriptBridge.h"
 
-@interface TourWebViewController ()<WKNavigationDelegate, WKUIDelegate>
+@interface YMTourWebViewController ()<WKNavigationDelegate, WKUIDelegate>
 
 @property(nonatomic, strong, readwrite) WKWebView *webview;
 @property(nonatomic, strong, readwrite) UIProgressView *progressView;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation TourWebViewController
+@implementation YMTourWebViewController
 
 - (void)dealloc
 {
