@@ -11,31 +11,33 @@
 
 @implementation YMRegionApi
 
-//- (void)getRegionList {
-//    NSString *urlString = @"https://api.0351zhuangxiu.com/tour/region/list?a=1&b=2";
-//    NSURL *url = [NSURL URLWithString:urlString];
-////    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
-//    NSURLSession *session = [NSURLSession sharedSession];
-////    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest];
-//
-//    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        NSLog(@"data: %@", data);
-//    }];
-//
-//    [dataTask resume];
-//}
-
-- (void) getRegionList {
+- (void)getRegionList {
     NSString *urlString = @"https://api.0351zhuangxiu.com/tour/region/list?a=1&b=2";
-//    NSURL *url = [NSURL URLWithString:urlString];
-    [[AFHTTPSessionManager manager] GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"response: %@", responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    NSURL *url = [NSURL URLWithString:urlString];
+//    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    NSURLSession *session = [NSURLSession sharedSession];
+//    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest];
+
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSError *jsonError;
+        id result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        NSLog(@"result: %@", result[@"data"][0][@"region_name"]);
         
     }];
+
+    [dataTask resume];
 }
+
+//- (void) getRegionList {
+//    NSString *urlString = @"https://api.0351zhuangxiu.com/tour/region/list?a=1&b=2";
+//    [[AFHTTPSessionManager manager] GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+//
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"response: %@", responseObject[@"data"][0][@"region_name"]);
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//
+//    }];
+//}
 
 @end
     

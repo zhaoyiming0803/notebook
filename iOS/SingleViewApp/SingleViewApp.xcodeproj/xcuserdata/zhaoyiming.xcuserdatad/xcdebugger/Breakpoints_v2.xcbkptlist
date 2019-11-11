@@ -32,8 +32,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "YMRegionApi"
-            landmarkType = "3">
+            landmarkName = "-getRegionList"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "369855F0-F5C8-403A-949C-592196C127A0 - 50439a2c428787ba"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[YMRegionApi getRegionList]"
+                  moduleName = "SingleViewApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaoyiming/Desktop/my-project/notebook/iOS/SingleViewApp/SingleViewApp/api/YMRegionApi.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "117">
+               </Location>
+               <Location
+                  uuid = "369855F0-F5C8-403A-949C-592196C127A0 - 61d5d54906a052c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__28-[YMRegionApi getRegionList]_block_invoke"
+                  moduleName = "SingleViewApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaoyiming/Desktop/my-project/notebook/iOS/SingleViewApp/SingleViewApp/api/YMRegionApi.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "115">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,10 +78,10 @@
             filePath = "SingleViewApp/api/YMRegionApi.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "YMRegionApi"
-            landmarkType = "3">
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-getRegionList"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
