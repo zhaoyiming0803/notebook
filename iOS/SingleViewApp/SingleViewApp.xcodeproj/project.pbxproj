@@ -23,6 +23,7 @@
 		E18141A82376B31B00D7A232 /* YMTourWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141A72376B31B00D7A232 /* YMTourWebViewController.m */; };
 		E18141B823770D9D00D7A232 /* YMDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141B723770D9D00D7A232 /* YMDeleteCellView.m */; };
 		E18141BC237853DE00D7A232 /* YMRegionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141BB237853DE00D7A232 /* YMRegionApi.m */; };
+		E18141C32379B13800D7A232 /* YMRegionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E18141C22379B13800D7A232 /* YMRegionItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		E18141B723770D9D00D7A232 /* YMDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMDeleteCellView.m; sourceTree = "<group>"; };
 		E18141BA237853DE00D7A232 /* YMRegionApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMRegionApi.h; sourceTree = "<group>"; };
 		E18141BB237853DE00D7A232 /* YMRegionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMRegionApi.m; sourceTree = "<group>"; };
+		E18141C12379B13800D7A232 /* YMRegionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMRegionItem.h; sourceTree = "<group>"; };
+		E18141C22379B13800D7A232 /* YMRegionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMRegionItem.m; sourceTree = "<group>"; };
 		F745DC6C0B8276B2BFB9B940 /* libPods-SingleViewApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SingleViewApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -147,14 +150,12 @@
 		E181414D236DC2E600D7A232 /* SingleViewApp */ = {
 			isa = PBXGroup;
 			children = (
-				E18141B92378531900D7A232 /* api */,
+				E18141BD2379B09B00D7A232 /* Regions */,
 				E18141982375B47200D7A232 /* icon.bundle */,
 				E181414E236DC2E600D7A232 /* AppDelegate.h */,
 				E181414F236DC2E600D7A232 /* AppDelegate.m */,
 				E1814151236DC2E600D7A232 /* SceneDelegate.h */,
 				E1814152236DC2E600D7A232 /* SceneDelegate.m */,
-				E1814154236DC2E600D7A232 /* YMTableViewController.h */,
-				E1814155236DC2E600D7A232 /* YMTableViewController.m */,
 				E181415A236DC2E700D7A232 /* Assets.xcassets */,
 				E181415F236DC2E700D7A232 /* Info.plist */,
 				E1814160236DC2E700D7A232 /* main.m */,
@@ -162,14 +163,10 @@
 				E181419B2375C44A00D7A232 /* YMCollectionViewController.m */,
 				E181419D23767A0600D7A232 /* YMScrollViewController.h */,
 				E181419E23767A0600D7A232 /* YMScrollViewController.m */,
-				E18141A023768D4C00D7A232 /* YMTableViewCell.h */,
-				E18141A123768D4C00D7A232 /* YMTableViewCell.m */,
 				E18141A32376A7DD00D7A232 /* YMNormalViewController.h */,
 				E18141A42376A7DD00D7A232 /* YMNormalViewController.m */,
 				E18141A62376B31B00D7A232 /* YMTourWebViewController.h */,
 				E18141A72376B31B00D7A232 /* YMTourWebViewController.m */,
-				E18141B623770D9D00D7A232 /* YMDeleteCellView.h */,
-				E18141B723770D9D00D7A232 /* YMDeleteCellView.m */,
 			);
 			path = SingleViewApp;
 			sourceTree = "<group>";
@@ -192,13 +189,45 @@
 			path = SingleViewAppUITests;
 			sourceTree = "<group>";
 		};
-		E18141B92378531900D7A232 /* api */ = {
+		E18141BD2379B09B00D7A232 /* Regions */ = {
+			isa = PBXGroup;
+			children = (
+				E18141C02379B0BE00D7A232 /* Controller */,
+				E18141BF2379B0B900D7A232 /* View */,
+				E18141BE2379B0B000D7A232 /* Model */,
+			);
+			path = Regions;
+			sourceTree = "<group>";
+		};
+		E18141BE2379B0B000D7A232 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E18141BA237853DE00D7A232 /* YMRegionApi.h */,
 				E18141BB237853DE00D7A232 /* YMRegionApi.m */,
+				E18141C12379B13800D7A232 /* YMRegionItem.h */,
+				E18141C22379B13800D7A232 /* YMRegionItem.m */,
 			);
-			path = api;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E18141BF2379B0B900D7A232 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E18141B623770D9D00D7A232 /* YMDeleteCellView.h */,
+				E18141B723770D9D00D7A232 /* YMDeleteCellView.m */,
+				E18141A023768D4C00D7A232 /* YMTableViewCell.h */,
+				E18141A123768D4C00D7A232 /* YMTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E18141C02379B0BE00D7A232 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1814154236DC2E600D7A232 /* YMTableViewController.h */,
+				E1814155236DC2E600D7A232 /* YMTableViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +387,7 @@
 			files = (
 				E18141A223768D4C00D7A232 /* YMTableViewCell.m in Sources */,
 				E18141BC237853DE00D7A232 /* YMRegionApi.m in Sources */,
+				E18141C32379B13800D7A232 /* YMRegionItem.m in Sources */,
 				E18141B823770D9D00D7A232 /* YMDeleteCellView.m in Sources */,
 				E18141A52376A7DD00D7A232 /* YMNormalViewController.m in Sources */,
 				E1814156236DC2E600D7A232 /* YMTableViewController.m in Sources */,

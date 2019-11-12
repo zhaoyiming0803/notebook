@@ -8,6 +8,7 @@
 
 #import "YMRegionApi.h"
 #import <AFNetworking.h>
+#import "YMRegionItem.h"
 
 @implementation YMRegionApi
 
@@ -21,8 +22,13 @@
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSError *jsonError;
         id result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        NSLog(@"result: %@", result[@"data"][0][@"region_name"]);
-        
+        NSArray *dataArray = [result objectForKey:@"data"];
+        NSLog(@"dataArray: %@", dataArray);
+        NSMutableArray *RegionMutableArray = @[].mutableCopy;
+        for (int i = 0; i < dataArray.count; i++) {
+            [RegionMutableArray addObject:dataArray[i]];
+        }
+        NSLog(@"RegionMutableArray: %@", RegionMutableArray);
     }];
 
     [dataTask resume];
