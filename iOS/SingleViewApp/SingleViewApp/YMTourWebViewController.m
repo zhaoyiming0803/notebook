@@ -31,7 +31,7 @@
     
     WKWebView *webview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 300)];
     
-    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1:3001/index.html?r=%u", arc4random()];
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1:8080/local/coupon-detail?couponId=18648496743645185"];
     NSLog(@"url: %@", url);
     [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     
@@ -49,7 +49,7 @@
     [self.webview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     
     // JSBridge 与 URL Scheme 方式只能同时选用其中一种，目前仅测试使用
-//    [self setupJsBridge];
+    [self setupJsBridge];
     
     UIView *naviveView = [[UIView alloc] initWithFrame:CGRectMake(0, 400, self.view.frame.size.width, self.view.frame.size.height - 400)];
     naviveView.backgroundColor = [UIColor blueColor];
@@ -156,11 +156,11 @@
 }
 
  - (void)setupJsBridge {
-  if (self.bridge) return;
-  // self.webview既可以是UIWebView，又可以是WKWebView
-  self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webview];
-  
-  [self.bridge registerHandler:@"login" handler:^(id data, WVJBResponseCallback responseCallback) {
+    if (self.bridge) return;
+    // self.webview既可以是UIWebView，又可以是WKWebView
+    self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webview];
+
+    [self.bridge registerHandler:@"login" handler:^(id data, WVJBResponseCallback responseCallback) {
       if (data == nil || ![data isKindOfClass:[NSDictionary class]]) {
           NSDictionary *response = @{@"error": @(-1), @"message": @"调用参数有误"};
           responseCallback([[NSString alloc] initWithData:(NSData *)response encoding:NSUTF8StringEncoding]);
@@ -171,12 +171,30 @@
       NSString *password = data[@"password"];
       NSDictionary *response = @{@"error": @(0), @"message": @"登录成功", @"data" : [NSString stringWithFormat:@"执行登录操作，账号为：%@、密码为：@%@", uname, password]};
       
-      [self.bridge callHandler:@"jsbridge_getJsMessage" data:@"点击了原生的按钮222222222" responseCallback:^(id responseData) {
-        
+      [self.bridge callHandler:@"event-from-native" data:@"收到消息a啦" responseCallback:^(id responseData) {
+          NSLog(@"message from h5: %@", responseData);
       }];
       
       responseCallback(response);
-  }];
+    }];
+     
+     [self.bridge registerHandler:@"getToken" handler:^(id data, WVJBResponseCallback responseCallback) {
+         NSDictionary *userInfo = @{
+             @"uid": @"123456789",
+             @"token": @"abcdefg"
+         };
+         responseCallback([self dictionaryToJson:userInfo]);
+     }];
+     
+     [self.bridge registerHandler:@"getUA" handler:^(id data, WVJBResponseCallback responseCallback) {
+         responseCallback(@"iOS");
+     }];
+};
+
+- (NSString*)dictionaryToJson:(NSDictionary *)dic {
+    NSError *parseError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 
 @end
