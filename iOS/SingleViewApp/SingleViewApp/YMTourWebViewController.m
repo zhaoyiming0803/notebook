@@ -31,7 +31,7 @@
     
     WKWebView *webview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 300)];
     
-    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1:8080/local/coupon-detail?couponId=18648496743645185"];
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1:8080/red-packet/index?b=1"];
     NSLog(@"url: %@", url);
     [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     
@@ -178,9 +178,9 @@
       responseCallback(response);
     }];
      
-     [self.bridge registerHandler:@"getToken" handler:^(id data, WVJBResponseCallback responseCallback) {
+     [self.bridge registerHandler:@"getUserIdFromObjC" handler:^(id data, WVJBResponseCallback responseCallback) {
          NSDictionary *userInfo = @{
-             @"uid": @"123456789",
+             @"uid": @"1234567890",
              @"token": @"abcdefg"
          };
          responseCallback([self dictionaryToJson:userInfo]);
