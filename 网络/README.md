@@ -12,6 +12,8 @@
 
 [为什么HTTPS比HTTP更安全?](https://mp.weixin.qq.com/s/waGPiuMSQu7YyC8Zd7qsJg)
 
+[详解Https是如何确保安全的？](http://www.codeceo.com/article/https-make-safe.html)
+
 [HTTP协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)
 
 [HTTP1.0、HTTP1.1 和 HTTP2.0 的区别](https://juejin.im/entry/5981c5df518825359a2b9476)
