@@ -55,6 +55,7 @@
 - (void) detachNewThreadWithBlockByInstance {
     NSThread *thread = [[NSThread alloc] initWithBlock:^{
         for (int i = 0; i < 5; i++) {
+            [NSThread sleepForTimeInterval:1]; // 延时n秒执行
             NSLog(@"%d = %@", i, [NSThread currentThread]);
         }
     }];
