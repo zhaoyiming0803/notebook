@@ -8,7 +8,20 @@
 
 #import "Person.h"
 
+#if defined(H5HOST)
+#define TEST @"test"
+#endif
+
 @implementation Person
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"------------- %@ --------------", TEST);
+    }
+    return self;
+}
 
 - (void) say {
     NSLog(@"%s", "人说话");

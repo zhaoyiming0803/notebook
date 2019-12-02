@@ -10,6 +10,16 @@
 // 字符指针与字符数组真正的区别：https://blog.csdn.net/on_1y/article/details/13030439
 // 字符数组与字符指针：https://blog.csdn.net/qiumm/article/details/5657120
 
+#define H5HOST @"https://web.0351zhuangxiu.com"
+
+#if (2 >= 1)
+#define SUPPORTWK
+#endif
+
+#if defined SUPPORTWK
+#define ABC 123
+#endif
+
 #import <Foundation/Foundation.h>
 
 int main(int argc, const char * argv[]) {
@@ -130,6 +140,22 @@ int main(int argc, const char * argv[]) {
         NSMutableString* str23 = [[NSMutableString alloc] initWithString:@"this is str23"];
         [str23 replaceCharactersInRange:NSMakeRange(1, 3) withString:@"123"];
         NSLog(@"str23: %@", str23);
+    }
+    
+    @autoreleasepool {
+        NSString *str1 = @"hello";
+        NSMutableString *str2 = [str1 mutableCopy];
+        str2 = [[NSMutableString alloc] initWithString:@"worlddddd"];
+        NSLog(@"str1 = %@; str2 = %@", str1, str2);
+        
+        NSMutableArray *arr1 = [[NSMutableArray alloc] initWithArray:@[@"1"]];
+        NSMutableArray *arr2 = [arr1 mutableCopy];
+        arr2[0] = @"0";
+        NSLog(@"arr1 = %@; arr2 = %@", arr1, arr2);
+    }
+    
+    @autoreleasepool {
+        NSLog(@"h5host: %@", H5HOST);
     }
     
     return 0;

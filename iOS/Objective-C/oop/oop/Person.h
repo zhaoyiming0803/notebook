@@ -11,6 +11,8 @@
 // 继承：减少代码重复度，可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展。
 // 多态：父类型声明的对象指向子类型，允许将子类类型的指针赋值给父类类型的指针
 
+#define H5HOST @"https://web.0351zhuangxiu.com";
+
 #import <Foundation/Foundation.h>
 
 @interface Person : NSObject
@@ -40,36 +42,33 @@
 // 关于 OC property 指示符：https://blog.csdn.net/lingyun_blog/article/details/41779955
 // c++ 中引用和指针的简单介绍：https://www.zhihu.com/question/37608201
 // OC 属性、属性关键字用法大全 https://www.jianshu.com/p/98db9087a6e7
+// ***** IOS retain strong copy assign weak关键字 https://blog.csdn.net/phyky/article/details/53811838
+// ***** copy，retain，strong的区别 https://blog.csdn.net/reallywcf/article/details/56835983
+// ***** IOS开发基础——属性关键字（copy strong weak等） https://juejin.im/post/5c4c1b15f265da616501e9da
 
-//属性关键字
+// 属性关键字
 
-//属性类型相关
-//
-//assign 默认的，一般用于非对象类型的属性，NSInteger double 等
-//
-//retain 用于对象类型的属性
-//
-//copy 多用于 NSString 类型的属性
-//
-//线程相关
-//
-//nonatomic 默认的，适用于单线程
-//
-//atomic 适用于多线程
-//
-//访问权限相关
-//
-//readonly 只生成 getter 方法
-//
-//readwrite 默认的，生成 getter 和 setter 方法
-//
-//方法生成相关
-//
-//setter 重命名自动生成的 setter 方法
-//
-//getter 重命名自动生成的 getter 方法
+// 属性类型相关
+// assign 默认的，一般用于非对象类型的属性，NSInteger double 等
+// retain 用于对象类型的属性
+// copy 多用于 NSString 类型的属性
+
+// 线程相关
+// nonatomic 默认的，适用于单线程
+// atomic 适用于多线程
+
+// 访问权限相关
+// readonly 只生成 getter 方法
+// readwrite 默认的，生成 getter 和 setter 方法
+
+// 方法生成相关
+// setter 重命名自动生成的 setter 方法
+// getter 重命名自动生成的 getter 方法
+
 @property(copy, nonatomic) NSString* name;
 @property(copy, nonatomic) NSString* sex;
+// 被assign修饰的对象在释放后，指针的地址还是存在的，也就是说指针并没有被置为nil，成为野指针。
+// 之所以assign可以修饰基本数据类型（非指针类型变量），是因为基本数据类型一般分配在栈上，栈的内存会由系统自动处理，不会造成野指针。
 @property(assign, nonatomic) NSInteger age;
 @property(strong, nonatomic) NSArray* children;
 
