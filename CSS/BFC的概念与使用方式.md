@@ -24,14 +24,14 @@ Block Formatting Context（格式化上下文) 是 W3C CSS2.1 规范中的一个
 
 这不是 CSS 的 bug，如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中：
 
-[https://github.com/zymfe/test-code/blob/master/test116.html](https://github.com/zymfe/test-code/blob/master/test117.html)
+[https://github.com/zymfe/test-code/blob/master/test117.html](https://github.com/zymfe/test-code/blob/master/test117.html)
 
 2、BFC 可以起到清除浮动的作用
 
 容器内元素浮动，脱离了文档流，所以容器只剩下 2px 的边距高度（如果有边框的话）。如果触发容器的 BFC，那么容器将会包裹着浮动元素。
 
-[https://github.com/zymfe/test-code/blob/master/test116.html](https://github.com/zymfe/test-code/blob/master/test118.html)
+[https://github.com/zymfe/test-code/blob/master/test118.html](https://github.com/zymfe/test-code/blob/master/test118.html)
 
 3、BFC 可以阻止元素被浮动元素覆盖
 
-[https://github.com/zymfe/test-code/blob/master/test116.html](https://github.com/zymfe/test-code/blob/master/test118.html)
+[https://github.com/zymfe/test-code/blob/master/test119.html](https://github.com/zymfe/test-code/blob/master/test119.html)
