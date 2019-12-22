@@ -17,7 +17,7 @@ JS中整数的数字范围是 -2^53 ~ 2^53, 超出则视为 2^53 处理，但是
 var data = '{"uid":12345678901,"token":"sdf131o3ij1o"}';
 
 // 使用正则，将匹配到的数字转为字符串
-var parsedData = data.replace(/\"uid\"(\s+)?(\d+)/g, '"uid:""$2"');
+var parsedData = data.replace(/\"uid\"(\s+)?:(\s+)?(\d+)/g, '"uid:""$3"');
 
 console.log(parsedData);
 ```
@@ -28,7 +28,7 @@ console.log(parsedData);
 var data = '{"uid":12345678901,"token":"sdf131o3ij1o"}';
 
 function num2str (data) {
-  return data.replace(/(\"\w+\"):(\s+)?(\d+)/g, '$1:"$3"');
+  return data.replace(/(\"\w+\")(\s+)?:(\s+)?(\d+)/g, '$1:"$4"');
 }
 
 console.log(JSON.parse(num2str(data)));
