@@ -223,7 +223,9 @@ GPU固然加速了网页，但是同时它增加了内存的使用，实际上�
 
 最可怕的是，浏览器有可能给复合层之后的所有相对或绝对定位的元素都创建一个复合层来渲染。
 
-实例demo：http://fouber.github.io/test/layer/?from=singlemessage&isappinstalled=0&nsukey=p%2F6HG8d6naPnAHVkfccZTumh%2FHQi%2BZUGnLYh9hPE1TJJKyamH4W3E396NLN3aDsEOUImSfmDWyf%2FJ%2B0uTFE32P47HOry7JXGpcytRF0q251u6n35i3rI2u7HI1sb6Sr1LLH%2FF794XlB8yl%2Fm7iTvub4hHyrZchpkUNMNjGJo%2BZpI14KGswmTL14JCqPd4oJo
+[实例demo1](http://fouber.github.io/test/layer/?from=singlemessage&isappinstalled=0&nsukey=p%2F6HG8d6naPnAHVkfccZTumh%2FHQi%2BZUGnLYh9hPE1TJJKyamH4W3E396NLN3aDsEOUImSfmDWyf%2FJ%2B0uTFE32P47HOry7JXGpcytRF0q251u6n35i3rI2u7HI1sb6Sr1LLH%2FF794XlB8yl%2Fm7iTvub4hHyrZchpkUNMNjGJo%2BZpI14KGswmTL14JCqPd4oJo)
+
+[实例demo2](https://github.com/zymfe/test-code/blob/master/test124.html)
 
 ### 引用：
 
