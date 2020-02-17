@@ -12,7 +12,7 @@ Block Formatting Context（格式化上下文) 是 W3C CSS2.1 规范中的一个
 - display 为 inline-block、table-cells、flex
 - overflow 除了 visible 以外的值 (hidden、auto、scroll)
 
-想一下，以上具有 BFC 特性的盒子，是不是『一个隔离了的独立容器，容器里边的元素不会在布局上影响到碗面的元素』。
+想一下，以上具有 BFC 特性的盒子，是不是『一个隔离了的独立容器，容器里边的元素不会在布局上影响到外面的元素』。
 
 ### BFC 特性的具体应用
 
