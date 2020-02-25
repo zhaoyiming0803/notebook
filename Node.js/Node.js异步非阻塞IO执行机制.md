@@ -2,6 +2,8 @@
 
 [关于 Node.js](https://nodejs.org/zh-cn/about/)
 
+阻塞IO和非阻塞IO的区别就在于：系统接收输入再到输出期间，能不能再接收其他输入
+
 ### 阻塞与非阻塞
 
 [Node.js 官网对阻塞与非阻塞的介绍](https://nodejs.org/zh-cn/docs/guides/blocking-vs-non-blocking/)
