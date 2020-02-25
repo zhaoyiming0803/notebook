@@ -1,15 +1,23 @@
-const EventEmitter = require('events').EventEmitter;
+const EventEmitter = require('events').EventEmitter
 
 class Person extends EventEmitter {
-  constructor () {
+  constructor (name, age) {
     super();
+    this.name = name
+    this.age = age
   }
 }
 
-const p = new Person();
+const p = new Person('zhaoyiming', 18)
 
-p.on('message', message => {
+p.on('message1', message => {
   console.log(message);
-});
+})
 
-p.emit('message', [1, 2, 3]);
+p.on('message2', message => {
+  console.log(p);
+})
+
+p.emit('message1', [1, 2, 3])
+
+p.emit('message2')
