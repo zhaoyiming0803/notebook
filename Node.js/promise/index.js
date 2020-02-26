@@ -60,7 +60,7 @@ return
 
   var p = new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject(false)
+      resolve(false)
     }, 1000)
   })
 
@@ -70,10 +70,17 @@ return
   //   console.log('catch: ', res)
   // })
 
+  // p.then(res => {
+  //   console.log('then: ', res)
+  // }).then(undefined, res => {
+  //   console.log('catch: ', res)
+  // })
+
   p.then(res => {
-    console.log('then: ', res)
-  }).then(undefined, res => {
-    console.log('catch: ', res)
+    console.log('then1: ', res)
+    return 123
+  }).then(res => {
+    console.log('then2: ', res)
   })
 
 })()
