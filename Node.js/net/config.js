@@ -1,8 +1,13 @@
-exports.userMap = {
+const userMap = {
   "100001": "张三",
   "100002": "李四",
   "100003": "王五",
   "100004": "赵六子"
-};
+}
 
-exports.ids = ['100001', '100002', '100003', '100004'];
+const ids = Object.keys(userMap)
+
+module.exports = {
+  userMap,
+  ids
+}

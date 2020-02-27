@@ -1,56 +1,58 @@
-const net = require('net');
-const { userMap } = require('../config');
+const net = require('net')
+const { userMap } = require('../config')
 
 const server = net.createServer(socket => {
-  let remnat = null;
+  let remnant = null
 
   socket.on('data', buf => {
-    let packageLength = 0;
-
-    if (remnat) {
-      buf = Buffer.concat([remnat, buf]);
+    if (remnant) {
+      buf = Buffer.concat([ remnant, buf ])
     }
 
+    let packageLength = 0
     while (packageLength = isComplete(buf)) {
-      const package = buf.slice(0, packageLength);
-      buf = buf.slice(packageLength);
-      remnat = null;
-      const content = decode(package);
-      console.log(content);
+      const package = buf.slice(0, packageLength)
+      buf = buf.slice(packageLength)
+      const content = decode(package)
+      console.log(content)
       setTimeout(() => {
-        socket.write(encode(content));
-      }, Math.random() * 2000);
+        const res = encode(content)
+        console.log(res)
+        socket.write(res)
+      }, Math.random() * 1000)
     }
 
-    remnat = buf;
-  });
-});
-
-function decode (buf) {
-  const header = buf.slice(0, 6);
-  const seq = header.readInt16BE(0);
-  const body = buf.slice(6).readInt32BE();
-  return {
-    seq,
-    data: body
-  }
-}
+    remnant = buf
+  })
+})
 
 function encode (content) {
-  const body = Buffer.from(userMap[content.data]);
+  const body = Buffer.from(userMap[content.body])
+  const header = Buffer.alloc(6)
+  header.writeInt16BE(content.seq, 0)
+  header.writeInt32BE(body.length, 2)
+  
+  return Buffer.concat([header, body])
+}
 
-  const header = Buffer.alloc(6);
-  header.writeInt16BE(content.seq);
-  header.writeInt32BE(body.length, 2);
-
-  return Buffer.concat([header, body]);
+function decode (package) {
+  const header = package.slice(0, 6)
+  const seq = header.readInt16BE(0)
+  const body = package.slice(6).readInt32BE()
+  return { seq, body }
 }
 
 function isComplete (buf) {
-  if (buf.length < 6) {
-    return 0;
+  if (buf.length <= 6) {
+    return 0
   }
-  return 6 + buf.readInt32BE(2); // header 的长度 + body 的长度
+
+  const bodyLength = buf.slice(0, 6).readInt32BE(2)
+  if (buf.length < 6 + bodyLength) {
+    return 0
+  }
+
+  return 6 + bodyLength // 一个完整包的长度 = header长度 + body长度
 }
 
-server.listen(3000);
+server.listen(3000)

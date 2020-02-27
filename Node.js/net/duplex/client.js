@@ -21,9 +21,9 @@ client.on('data', buf => {
 
 setInterval(() => {
   const index = Math.floor(Math.random() * ids.length);
-  const buf = Buffer.alloc(4);
+  const buf = Buffer.alloc(6);
   buf.writeInt16BE(seq++, 0);
-  buf.writeInt16BE(ids[index], 2);
+  buf.writeInt32BE(ids[index], 2);
   client.write(buf);
   console.log('id: ', ids[index]);
 }, 500);
