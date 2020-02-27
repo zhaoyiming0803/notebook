@@ -78,7 +78,7 @@ return
 
   p.then(res => {
     console.log('then1: ', res)
-    return 123
+    // return 123
   }).then(res => {
     console.log('then2: ', res)
   })

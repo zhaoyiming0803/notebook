@@ -1,5 +1,11 @@
 message Person {
-  required string    name = 1;
-  required string    sex = 2;
-  required float     age = 3;
+    required string name = 1;
+    required string sex = 2;
+    required int32  age = 3;
+}
+
+message Column {
+    required int32 id = 1;
+    required string name = 2;
+    required float price = 3;
 }
