@@ -1,9 +1,9 @@
 const Koa = require('koa')
 const Router = require('@koa/router')
 const fs = require('fs')
+const static = require('koa-static')
 const router = new Router()
 const app = new Koa()
-const static = require('koa-static')
 
 app.use(static(__dirname + '/dist/'))
 
