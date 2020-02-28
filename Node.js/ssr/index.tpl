@@ -11,6 +11,8 @@
 <body>
   ${include('title')}
   ${include('content')}
+  <div>name: ${name}</div>
+  <div>age: ${age}</div>
 </body>
 
 </html>

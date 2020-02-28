@@ -9,6 +9,8 @@ const templateMap = {
 };
 
 const context = {
+  name: 'zhaoyiming',
+  age: 18,
   xss: function (str) {
     if (!str) return '';
     return str.toString()
